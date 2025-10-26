@@ -1,101 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocabulary Tables</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Whole page background */
     body {
       font-family: 'Nunito', sans-serif;
-      background-color: #F2F2F2; /* Pastel gray */
+      background-color: #f2f2f2; /* Pastel gray background */
       margin: 0;
       padding: 20px;
     }
 
-/* Set font size 18px for all table cells */
-table td, table button, table .word-button {
-    font-size: 18px;
-}
-
-/* Keep table headers (titles) bigger */
-table th {
-    font-size: 20px;  /* You can adjust to your preferred size */
-    font-weight: 700;
-}
-
-    /* General table design */
-    table {
-      width: 80%;
-      margin: 20px auto;
-      border-collapse: collapse;
-      table-layout: fixed;
-    }
-
-    th, td {
-      border: 1px solid #999;
-      padding: 10px;
+    h2 {
       text-align: center;
-      vertical-align: middle;
-      word-wrap: break-word;
+      font-size: 30px;
+      margin-top: 40px;
     }
 
-    /* Meaning column alignment */
-    th:nth-child(4) { text-align: center; }
-    td:nth-child(4) { text-align: left; }
-
-    /* Button that fills word cell */
-    .word-cell { padding: 0; }
-    .word-button {
+    table {
       width: 100%;
-      height: 100%;
-      border: none;
-      background: none;
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      cursor: pointer;
-    }
-    .word-button:hover {
-      background-color: rgba(0, 0, 0, 0.05);
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      font-size: 18px;
     }
 
-    /* 🎨 COLORS PER MAJOR */
-    .english-table th, .english-table td {
-      background-color: #FFE5B4; /* pastel yellow-orange */
-    }
+th, td { border: 1px solid #999; padding: 10px; text-align: center; vertical-align: middle; word-wrap: break-word; } /* Meaning column alignment */ th:nth-child(4) { text-align: center; } td:nth-child(4) { text-align: left; }
 
-    .math-table th, .math-table td {
-      background-color: #E8DAFF; /* pastel purple */
-    }
-
-    .science-table th, .science-table td {
-      background-color: #D8F3DC; /* pastel green */
-    }
-
-/* Make sure all table content and buttons use Nunito */
-table, th, td, button, .word-button {
-    font-family: 'Nunito', sans-serif !important;
+table {
+    width: 80%;               /* Keeps table centered and not too wide */
+    margin: 0 auto;
+    border-collapse: collapse;
+    table-layout: fixed;      /* Ensures equal column width */
 }
 
+th, td {
+    border: 1px solid #999;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    word-wrap: break-word;    /* Prevents overflow */
+}
+
+th:nth-child(1), td:nth-child(1) { width: 15%; } /* Word */
+th:nth-child(2), td:nth-child(2) { width: 25%; } /* IPA (US) */
+th:nth-child(3), td:nth-child(3) { width: 25%; } /* IPA (UK) */
+th:nth-child(4), td:nth-child(4) { width: 35%; } /* Meaning */
+    }
+
+    th {
+      font-size: 23px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+/* Button that fills word cell */ .word-cell { padding: 0; } .word-button { width: 100%; height: 100%; border: none; background: none; padding: 10px; display: flex; align-items: center; justify-content: center; gap: 5px; cursor: pointer; } .word-button:hover { background-color: rgba(0, 0, 0, 0.05); }
+
+    /* ✅ Science Table - Pastel Green */
+    .science-table th, .science-table td {
+      background-color: #d8f3dc;
+    }
+
+    /* ✅ Math Table - Pastel Purple */
+    .math-table th, .math-table td {
+      background-color: #e6d4f7;
+    }
+
+    /* ✅ English Table - Pastel Yellow-Orange */
+    .english-table th, .english-table td {
+      background-color: #ffedcc;
+    }
+
+    /* Divider line */
+    .divider {
+      height: 3px;
+      background-color: #ccc;
+      margin: 40px 0;
+    }
+
+    button.word-button {
+      font-size: 18px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+    }
   </style>
 </head>
 <body>
 
-<h1>Word List with IPA & Meanings</h1>
-<h2 class="subtitle">For Science Majors</h2>
-<table class="science-table">
+  <!-- ✅ SCIENCE TABLE -->
+  <h2>🔬 Vocabulary for Science Majors</h2>
+  <table class="science-table">
     <tr>
-        <th>WORD</th>
-        <th>IPA (US)</th>
-        <th>IPA (UK)</th>
-        <th>MEANING</th>
+      <th>Word</th>
+      <th>UK IPA</th>
+      <th>US IPA</th>
+      <th>Meaning</th>
     </tr>
     <tr>
-<td class="word-cell">
+      <td class="word-cell">
          <button class="word-button" data-word="algae">🔊 algae</button></td>
         <td>/ˈæl.dʒiː/</td>
         <td>/ˈæl.ɡiː/</td>
@@ -251,112 +257,191 @@ table, th, td, button, .word-button {
         <td>/bəˈrɒm.ɪ.tər/</td>
         <td>‣ an instrument measuring atmospheric pressure, used especially in forecasting the weather and determining altitude</td>
 
-</table>
+  </table>
 
- <script src="speakerscience.js"></script>
+  <div class="divider"></div>
 
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    /* Whole page background */
-    body {
-      font-family: 'Nunito', sans-serif;
-      background-color: #F2F2F2; /* Pastel gray */
-      margin: 0;
-      padding: 20px;
-    }
-
-/* Set font size 18px for all table cells */
-table td, table button, table .word-button {
-    font-size: 18px;
-}
-
-/* Keep table headers (titles) bigger */
-table th {
-    font-size: 20px;  /* You can adjust to your preferred size */
-    font-weight: 700;
-}
-
-    /* General table design */
-    table {
-      width: 80%;
-      margin: 20px auto;
-      border-collapse: collapse;
-      table-layout: fixed;
-    }
-
-    th, td {
-      border: 1px solid #999;
-      padding: 10px;
-      text-align: center;
-      vertical-align: middle;
-      word-wrap: break-word;
-    }
-
-    /* Meaning column alignment */
-    th:nth-child(4) { text-align: center; }
-    td:nth-child(4) { text-align: left; }
-
-    /* Button that fills word cell */
-    .word-cell { padding: 0; }
-    .word-button {
-      width: 100%;
-      height: 100%;
-      border: none;
-      background: none;
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      cursor: pointer;
-    }
-    .word-button:hover {
-      background-color: rgba(0, 0, 0, 0.05);
-    }
-
-    /* 🎨 COLORS PER MAJOR */
-    .english-table th, .english-table td {
-      background-color: #FFE5B4; /* pastel yellow-orange */
-    }
-
-    .math-table th, .math-table td {
-      background-color: #E8DAFF; /* pastel purple */
-    }
-
-    .science-table th, .science-table td {
-      background-color: #D8F3DC; /* pastel green */
-    }
-
-/* Make sure all table content and buttons use Nunito */
-table, th, td, button, .word-button {
-    font-family: 'Nunito', sans-serif !important;
-}
-
-  </style>
-</head>
-<body>
-
-<h1>Word List with IPA & Meanings</h1>
-<h2 class="subtitle">For English Majors</h2>
-<table class="english-table">
-<table>
+  <!-- ✅ MATH TABLE -->
+  <h2>📐 Vocabulary for Math Majors</h2>
+  <table class="math-table">
     <tr>
-        <th>WORD</th>
-        <th>IPA (US)</th>
-        <th>IPA (UK)</th>
-        <th>MEANING</th>
-   </tr>
+      <th>Word</th>
+      <th>UK IPA</th>
+      <th>US IPA</th>
+      <th>Meaning</th>
+    </tr>
     <tr>
+              <td><button class="word-button" data-word="fifth">🔊 fifth</button></td>
+        <td>/fɪfθ/</td>
+        <td>/fɪfθ/</td>
+        <td>‣ the ordinal number following fourth; one of five equal parts</td>
+    </tr>
+    <tr>
+         <td><button class="word-button" data-word="hundred ">🔊 hundred</button></td>
+        <td>/ˈhʌn.drəd/</td>
+        <td>/ˈhʌn.drəd/</td>
+        <td>‣ the number equivalent to ten times ten; 100</td>
+    </tr>
+    <tr>
+         <td><button class="word-button" data-word="incongruent ">🔊 incongruent</button></td>
+        <td>/ˌɪn.kəŋˈɡru.ənt/ /ɪnˈkɑːŋ.ɡru.ənt/</td>
+        <td>/ɪnˈkɒŋ.ɡru.ənt/</td>
+        <td>‣ not matching or not in agreement; in geometry, figures that do not have the same size and shape
+</td>
+    </tr>
+    <tr>
+         <td><button class="word-button" data-word="elimination">🔊 elimination</button></td>
+        <td>/iˌlɪm.əˈneɪ.ʃən/</td>
+        <td>/iˌlɪm.ɪˈneɪ.ʃən/</td>
+        <td>‣ the process of removing or getting rid of something, often used in algebra to solve systems of equations</td>
+    <tr>
+         <td><button class="word-button" data-word="integral">🔊 integral </button></td>
+        <td>/ˈɪn.t̬ə.ɡrəl/</td>
+        <td>/ˈɪn.tɪ.ɡrəl/</td>
+        <td>‣ necessary to make a whole complete; in mathematics, the area under a curve</td>
+    <tr>
+         <td><button class="word-button" data-word="interpret">🔊 interpret</button></td>
+        <td> /ɪnˈtɝːprɪt/</td>
+        <td>/ɪnˈtɜː.prɪt/</td>
+        <td>‣ to explain the meaning of information, words, or actions
+</td>
+    <tr>
+         <td><button class="word-button" data-word="measurement  ">🔊 measurement  </button></td>
+        <td>/ˈmeʒ.ɚ.mənt/</td>
+        <td>/ˈmeʒ.ə.mənt/</td>
+        <td>‣ the process or result of determining the size, amount, or degree of an object or quantity</td>
+    <tr>
+         <td><button class="word-button" data-word="twelfth ">🔊 twelfth</button></td>
+        <td> /twelfθ/ </td>
+        <td>/twelfθ/</td>
+        <td>‣ the ordinal number following eleventh; one of twelve equal parts</td>
+    <tr>
+         <td><button class="word-button" data-word="quote ">🔊 quote  </button></td>
+        <td> /kwoʊt/</td>
+        <td>/kwəʊt/</td>
+        <td>‣ to repeat or copy out words from a text or speech, typically with an acknowledgment of the original author or speaker</td>
+    <tr>
+         <td><button class="word-button" data-word="Cartesian">🔊 Cartesian  </button></td>
+        <td>/kɑːrˈti.ʒən/</td>
+        <td>/kɑːˈti.zi.ən/</td>
+        <td>‣ relating to the coordinate system devised by René Descartes, which uses numbered axes to uniquely determine every point in a plane or space</td>
+    <tr>
+         <td><button class="word-button" data-word="cosecant">🔊 cosecant  </button></td>
+        <td>/ˌkoʊˈsiː.kənt/</td>
+        <td>/ˌkəʊˈsiː.kənt/</td>
+        <td>‣ in trigonometry, the reciprocal of the sine of an angle</td>
+    <tr>
+         <td><button class="word-button" data-word="Euclidean ">🔊 Euclidean </button></td>
+        <td> /juˈklɪd.i.ən/</td>
+        <td>/juˈklɪd.i.ən/</td>
+        <td>‣ relating to the system of geometry based on the axioms of the Greek mathematician Euclid</td>
+    <tr>
+         <td><button class="word-button" data-word="Fibonacci">🔊 Fibonacci </button></td>
+        <td> /fɪb.əˈnɑː.tʃi /</td>
+        <td>/fɪb.əˈnɑː.tʃi/</td>
+        <td>‣ relating to the sequence of numbers where each number is the sum of the two preceding ones, starting with 0 and 1</td>
+    <tr>
+         <td><button class="word-button" data-word="pint ">🔊 pint </button></td>
+        <td> /paɪnt/</td>
+        <td>/paɪnt/</td>
+        <td>‣ a unit of liquid or dry capacity, equal to one-eighth of a gallon (approx. 0.57 liters in the UK or 0.47 liters in the US)</td>
+    <tr>
+         <td><button class="word-button" data-word="phi  ">🔊 phi  </button></td>
+        <td>/faɪ/</td>
+        <td>/faɪ/</td>
+        <td>‣ the symbol used to represent the golden ratio (approximately 1.618), an irrational number found in geometry and nature</td>
+    <tr>
+         <td><button class="word-button" data-word="polyhedron ">🔊 polyhedron </button></td>
+        <td>/ˌpɑː.liˈhiː.drɑːn/</td>
+        <td>/ˌpɒl.iˈhiː.drən/</td>
+        <td>‣ a three-dimensional solid figure whose surfaces are all flat polygons (faces)</td>
+    <tr>
+         <td><button class="word-button" data-word="Pythagorean theorem">🔊 Pythagorean theorem  </button></td>
+        <td> /pɪˌθæɡ.əˈriː.ən ˈθiː.rəm/</td>
+        <td>/paɪˌθæɡ.ə.riː.ən ˈθɪə.rəm/</td>
+        <td>‣ a fundamental relation in Euclidean geometry among the three sides of a right triangle: the square of the hypotenuse (c) is equal to the sum of the squares of the other two sides (a^2 + b^2 = c^2)
+</td>
+    <tr>
+         <td><button class="word-button" data-word="quotient  ">🔊 quotient  </button></td>
+        <td> /ˈkwoʊ.ʃənt/</td>
+        <td>/ˈkwəʊ.ʃənt/</td>
+        <td>‣ the result obtained by dividing one number by another</td>
+    <tr>
+         <td><button class="word-button" data-word="secant  ">🔊 secant  </button></td>
+        <td> /ˈsiː.kənt/</td>
+        <td>/ˈsiː.kənt/</td>
+        <td>‣ in trigonometry, the reciprocal of the cosine of an angle (abbreviated as \sec); also, a line that intersects a curve at two points</td>
+    <tr>
+         <td><button class="word-button" data-word="scalar  ">🔊 scalar </button></td>
+        <td>/ˈskeɪ.lɚ/</td>
+        <td>/ˈskeɪ.lər/</td>
+        <td>‣ a quantity that has magnitude but not direction</td>
+    <tr>
+         <td><button class="word-button" data-word="tableau  ">🔊 tableau  </button></td>
+        <td>/ˈtæb.loʊ/</td>
+        <td>/ˈtæb.ləʊ/</td>
+        <td>‣ a concise, organized display or arrangement of data, often used in linear programming and matrix operations</td>
+    <tr>
+         <td><button class="word-button" data-word="theta ">🔊 theta </button></td>
+        <td> /ˈθeɪ.t̬ə/ </td>
+        <td>/ˈθiː.tə/</td>
+        <td>‣ the eighth letter of the Greek alphabet, often used in mathematics to represent an unknown angle</td>
+    <tr>
+         <td><button class="word-button" data-word="trigonometry  ">🔊 trigonometry  </button></td>
+        <td>/ˌtrɪɡ.əˈnɑː.mə.tri/</td>
+        <td>/ˌtrɪɡ.əˈnɒm.ə.tri/</td>
+        <td>‣ the branch of mathematics dealing with the relations between the sides and angles of triangles and with the relevant functions of angles</td>
+    <tr>
+         <td><button class="word-button" data-word="variability  ">🔊 variability  </button></td>
+        <td> /ˌver.i.əˈbɪl.ə.t̬i/</td>
+        <td> /ˌver.i.əˈbɪl.ə.t̬i/</td>
+        <td>‣ the extent to which data points or values in a set differ from each other; a lack of uniformity</td>
+    <tr>
+         <td><button class="word-button" data-word="variable  ">🔊 variable  </button></td>
+        <td>/ˈver.i.ə.bəl/</td>
+        <td>/ˈveə.ri.ə.bəl/</td>
+        <td>‣ a quantity or factor that can change or be changed; a symbol (like x or y) representing an unknown or changing value</td>
+    <tr>
+         <td><button class="word-button" data-word="quantitative  ">🔊 quantitative  </button></td>
+        <td>/ˈkwɑːn.t̬ə.teɪ.t̬ɪv/</td>
+        <td>/ˈkwɒn.tɪ.tə.tɪv/</td>
+        <td>‣ relating to or measurable by amount, number, or quantity</td>
+    <tr>
+         <td><button class="word-button" data-word="coefficient  ">🔊 coefficient  </button></td>
+        <td>/ˌkoʊ.ɪˈfɪʃ.ənt/</td>
+        <td>/ˌkəʊ.ɪˈfɪʃ.ənt/</td>
+        <td>‣ a numerical or constant multiplier of a variable or a term in a polynomial</td>
+    <tr>
+         <td><button class="word-button" data-word="tangential  ">🔊 tangential</button></td>
+        <td>/tænˈdʒen.ʃəl/</td>
+        <td>/tænˈdʒen.ʃəl/</td>
+        <td>‣ relating to or along a tangent (a line that touches a curve at only one point); often meaning only superficially relevant
+</td>
+    <tr>
+         <td><button class="word-button" data-word="longitudinal   ">🔊 longitudinal </button></td>
+        <td>/ˌlɑːn.dʒəˈtuː.dɪ.nəl/</td>
+        <td>/ˌlɒŋ.ɡɪˈtʃuː.dɪ.nəl/ /ˌlɒn.dʒɪˈtʃuː.dɪ.nəl/</td>
+        <td>‣ running lengthwise rather than across; often relating to studies that follow a subject over an extended period of time</td>
+    <tr>
+         <td><button class="word-button" data-word="tangency  ">🔊 tangency</button></td>
+        <td>/ˈtæn.dʒən.si/ </td>
+        <td>/ˈtæn.dʒən.si/</td>
+        <td>‣ the condition or quality of being tangent or touching at a single point or along a line</td>
+  </table>
+
+  <div class="divider"></div>
+
+  <!-- ✅ ENGLISH TABLE -->
+  <h2>📖 Vocabulary for English Majors</h2>
+  <table class="english-table">
+    <tr>
+      <th>Word</th>
+      <th>UK IPA</th>
+      <th>US IPA</th>
+      <th>Meaning</th>
+    </tr>
+    <tr>
+         <tr>
          <td><button class="word-button" data-word="metabolism ">🔊 metabolism </button></td>
         <td>/məˈtæb.əl.ɪ.zəm/</td>
         <td>/məˈtæb.əl.ɪ.zəm/</td>
@@ -586,272 +671,14 @@ table, th, td, button, .word-button {
     </tr>
     <tr>
 
-</table>
+  </table>
 
- <script src="speakerenglish.js"></script>
-
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    /* Whole page background */
-    body {
-      font-family: 'Nunito', sans-serif;
-      background-color: #F2F2F2; /* Pastel gray */
-      margin: 0;
-      padding: 20px;
-    }
-
-/* Set font size 18px for all table cells */
-table td, table button, table .word-button {
-    font-size: 18px;
-}
-
-/* Keep table headers (titles) bigger */
-table th {
-    font-size: 20px;  /* You can adjust to your preferred size */
-    font-weight: 700;
-}
-
-    /* General table design */
-    table {
-      width: 80%;
-      margin: 20px auto;
-      border-collapse: collapse;
-      table-layout: fixed;
-    }
-
-    th, td {
-      border: 1px solid #999;
-      padding: 10px;
-      text-align: center;
-      vertical-align: middle;
-      word-wrap: break-word;
-    }
-
-    /* Meaning column alignment */
-    th:nth-child(4) { text-align: center; }
-    td:nth-child(4) { text-align: left; }
-
-    /* Button that fills word cell */
-    .word-cell { padding: 0; }
-    .word-button {
-      width: 100%;
-      height: 100%;
-      border: none;
-      background: none;
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      cursor: pointer;
-    }
-    .word-button:hover {
-      background-color: rgba(0, 0, 0, 0.05);
-    }
-
-    /* 🎨 COLORS PER MAJOR */
-    .english-table th, .english-table td {
-      background-color: #FFE5B4; /* pastel yellow-orange */
-    }
-
-    .math-table th, .math-table td {
-      background-color: #E8DAFF; /* pastel purple */
-    }
-
-    .science-table th, .science-table td {
-      background-color: #D8F3DC; /* pastel green */
-    }
-
-/* Make sure all table content and buttons use Nunito */
-table, th, td, button, .word-button {
-    font-family: 'Nunito', sans-serif !important;
-}
-
-  </style>
-</head>
-<body>
-
-<h1>Word List with IPA & Meanings</h1>
-<h2 class="subtitle">For Math Majors</h2>
-<table class="math-table">
-<table>
-    <tr>
-        <th>WORD</th>
-        <th>IPA (US)</th>
-        <th>IPA (UK)</th>
-        <th>MEANING </th>
-    </tr>
-    <tr>
-         <td><button class="word-button" data-word="fifth">🔊 fifth</button></td>
-        <td>/fɪfθ/</td>
-        <td>/fɪfθ/</td>
-        <td>‣ the ordinal number following fourth; one of five equal parts</td>
-    </tr>
-    <tr>
-         <td><button class="word-button" data-word="hundred ">🔊 hundred</button></td>
-        <td>/ˈhʌn.drəd/</td>
-        <td>/ˈhʌn.drəd/</td>
-        <td>‣ the number equivalent to ten times ten; 100</td>
-    </tr>
-    <tr>
-         <td><button class="word-button" data-word="incongruent ">🔊 incongruent</button></td>
-        <td>/ˌɪn.kəŋˈɡru.ənt/ /ɪnˈkɑːŋ.ɡru.ənt/</td>
-        <td>/ɪnˈkɒŋ.ɡru.ənt/</td>
-        <td>‣ not matching or not in agreement; in geometry, figures that do not have the same size and shape
-</td>
-    </tr>
-    <tr>
-         <td><button class="word-button" data-word="elimination">🔊 elimination</button></td>
-        <td>/iˌlɪm.əˈneɪ.ʃən/</td>
-        <td>/iˌlɪm.ɪˈneɪ.ʃən/</td>
-        <td>‣ the process of removing or getting rid of something, often used in algebra to solve systems of equations</td>
-    <tr>
-         <td><button class="word-button" data-word="integral">🔊 integral </button></td>
-        <td>/ˈɪn.t̬ə.ɡrəl/</td>
-        <td>/ˈɪn.tɪ.ɡrəl/</td>
-        <td>‣ necessary to make a whole complete; in mathematics, the area under a curve</td>
-    <tr>
-         <td><button class="word-button" data-word="interpret">🔊 interpret</button></td>
-        <td> /ɪnˈtɝːprɪt/</td>
-        <td>/ɪnˈtɜː.prɪt/</td>
-        <td>‣ to explain the meaning of information, words, or actions
-</td>
-    <tr>
-         <td><button class="word-button" data-word="measurement  ">🔊 measurement  </button></td>
-        <td>/ˈmeʒ.ɚ.mənt/</td>
-        <td>/ˈmeʒ.ə.mənt/</td>
-        <td>‣ the process or result of determining the size, amount, or degree of an object or quantity</td>
-    <tr>
-         <td><button class="word-button" data-word="twelfth ">🔊 twelfth</button></td>
-        <td> /twelfθ/ </td>
-        <td>/twelfθ/</td>
-        <td>‣ the ordinal number following eleventh; one of twelve equal parts</td>
-    <tr>
-         <td><button class="word-button" data-word="quote ">🔊 quote  </button></td>
-        <td> /kwoʊt/</td>
-        <td>/kwəʊt/</td>
-        <td>‣ to repeat or copy out words from a text or speech, typically with an acknowledgment of the original author or speaker</td>
-    <tr>
-         <td><button class="word-button" data-word="Cartesian">🔊 Cartesian  </button></td>
-        <td>/kɑːrˈti.ʒən/</td>
-        <td>/kɑːˈti.zi.ən/</td>
-        <td>‣ relating to the coordinate system devised by René Descartes, which uses numbered axes to uniquely determine every point in a plane or space</td>
-    <tr>
-         <td><button class="word-button" data-word="cosecant">🔊 cosecant  </button></td>
-        <td>/ˌkoʊˈsiː.kənt/</td>
-        <td>/ˌkəʊˈsiː.kənt/</td>
-        <td>‣ in trigonometry, the reciprocal of the sine of an angle</td>
-    <tr>
-         <td><button class="word-button" data-word="Euclidean ">🔊 Euclidean </button></td>
-        <td> /juˈklɪd.i.ən/</td>
-        <td>/juˈklɪd.i.ən/</td>
-        <td>‣ relating to the system of geometry based on the axioms of the Greek mathematician Euclid</td>
-    <tr>
-         <td><button class="word-button" data-word="Fibonacci">🔊 Fibonacci </button></td>
-        <td> /fɪb.əˈnɑː.tʃi /</td>
-        <td>/fɪb.əˈnɑː.tʃi/</td>
-        <td>‣ relating to the sequence of numbers where each number is the sum of the two preceding ones, starting with 0 and 1</td>
-    <tr>
-         <td><button class="word-button" data-word="pint ">🔊 pint </button></td>
-        <td> /paɪnt/</td>
-        <td>/paɪnt/</td>
-        <td>‣ a unit of liquid or dry capacity, equal to one-eighth of a gallon (approx. 0.57 liters in the UK or 0.47 liters in the US)</td>
-    <tr>
-         <td><button class="word-button" data-word="phi  ">🔊 phi  </button></td>
-        <td>/faɪ/</td>
-        <td>/faɪ/</td>
-        <td>‣ the symbol used to represent the golden ratio (approximately 1.618), an irrational number found in geometry and nature</td>
-    <tr>
-         <td><button class="word-button" data-word="polyhedron ">🔊 polyhedron </button></td>
-        <td>/ˌpɑː.liˈhiː.drɑːn/</td>
-        <td>/ˌpɒl.iˈhiː.drən/</td>
-        <td>‣ a three-dimensional solid figure whose surfaces are all flat polygons (faces)</td>
-    <tr>
-         <td><button class="word-button" data-word="Pythagorean theorem">🔊 Pythagorean theorem  </button></td>
-        <td> /pɪˌθæɡ.əˈriː.ən ˈθiː.rəm/</td>
-        <td>/paɪˌθæɡ.ə.riː.ən ˈθɪə.rəm/</td>
-        <td>‣ a fundamental relation in Euclidean geometry among the three sides of a right triangle: the square of the hypotenuse (c) is equal to the sum of the squares of the other two sides (a^2 + b^2 = c^2)
-</td>
-    <tr>
-         <td><button class="word-button" data-word="quotient  ">🔊 quotient  </button></td>
-        <td> /ˈkwoʊ.ʃənt/</td>
-        <td>/ˈkwəʊ.ʃənt/</td>
-        <td>‣ the result obtained by dividing one number by another</td>
-    <tr>
-         <td><button class="word-button" data-word="secant  ">🔊 secant  </button></td>
-        <td> /ˈsiː.kənt/</td>
-        <td>/ˈsiː.kənt/</td>
-        <td>‣ in trigonometry, the reciprocal of the cosine of an angle (abbreviated as \sec); also, a line that intersects a curve at two points</td>
-    <tr>
-         <td><button class="word-button" data-word="scalar  ">🔊 scalar </button></td>
-        <td>/ˈskeɪ.lɚ/</td>
-        <td>/ˈskeɪ.lər/</td>
-        <td>‣ a quantity that has magnitude but not direction</td>
-    <tr>
-         <td><button class="word-button" data-word="tableau  ">🔊 tableau  </button></td>
-        <td>/ˈtæb.loʊ/</td>
-        <td>/ˈtæb.ləʊ/</td>
-        <td>‣ a concise, organized display or arrangement of data, often used in linear programming and matrix operations</td>
-    <tr>
-         <td><button class="word-button" data-word="theta ">🔊 theta </button></td>
-        <td> /ˈθeɪ.t̬ə/ </td>
-        <td>/ˈθiː.tə/</td>
-        <td>‣ the eighth letter of the Greek alphabet, often used in mathematics to represent an unknown angle</td>
-    <tr>
-         <td><button class="word-button" data-word="trigonometry  ">🔊 trigonometry  </button></td>
-        <td>/ˌtrɪɡ.əˈnɑː.mə.tri/</td>
-        <td>/ˌtrɪɡ.əˈnɒm.ə.tri/</td>
-        <td>‣ the branch of mathematics dealing with the relations between the sides and angles of triangles and with the relevant functions of angles</td>
-    <tr>
-         <td><button class="word-button" data-word="variability  ">🔊 variability  </button></td>
-        <td> /ˌver.i.əˈbɪl.ə.t̬i/</td>
-        <td> /ˌver.i.əˈbɪl.ə.t̬i/</td>
-        <td>‣ the extent to which data points or values in a set differ from each other; a lack of uniformity</td>
-    <tr>
-         <td><button class="word-button" data-word="variable  ">🔊 variable  </button></td>
-        <td>/ˈver.i.ə.bəl/</td>
-        <td>/ˈveə.ri.ə.bəl/</td>
-        <td>‣ a quantity or factor that can change or be changed; a symbol (like x or y) representing an unknown or changing value</td>
-    <tr>
-         <td><button class="word-button" data-word="quantitative  ">🔊 quantitative  </button></td>
-        <td>/ˈkwɑːn.t̬ə.teɪ.t̬ɪv/</td>
-        <td>/ˈkwɒn.tɪ.tə.tɪv/</td>
-        <td>‣ relating to or measurable by amount, number, or quantity</td>
-    <tr>
-         <td><button class="word-button" data-word="coefficient  ">🔊 coefficient  </button></td>
-        <td>/ˌkoʊ.ɪˈfɪʃ.ənt/</td>
-        <td>/ˌkəʊ.ɪˈfɪʃ.ənt/</td>
-        <td>‣ a numerical or constant multiplier of a variable or a term in a polynomial</td>
-    <tr>
-         <td><button class="word-button" data-word="tangential  ">🔊 tangential</button></td>
-        <td>/tænˈdʒen.ʃəl/</td>
-        <td>/tænˈdʒen.ʃəl/</td>
-        <td>‣ relating to or along a tangent (a line that touches a curve at only one point); often meaning only superficially relevant
-</td>
-    <tr>
-         <td><button class="word-button" data-word="longitudinal   ">🔊 longitudinal </button></td>
-        <td>/ˌlɑːn.dʒəˈtuː.dɪ.nəl/</td>
-        <td>/ˌlɒŋ.ɡɪˈtʃuː.dɪ.nəl/ /ˌlɒn.dʒɪˈtʃuː.dɪ.nəl/</td>
-        <td>‣ running lengthwise rather than across; often relating to studies that follow a subject over an extended period of time</td>
-    <tr>
-         <td><button class="word-button" data-word="tangency  ">🔊 tangency</button></td>
-        <td>/ˈtæn.dʒən.si/ </td>
-        <td>/ˈtæn.dʒən.si/</td>
-        <td>‣ the condition or quality of being tangent or touching at a single point or along a line</td>
-
-</table>
-
- <script src="speaker.js"></script>
+  <script src="speakerscience.js"></script>
+  <script src="speakermath.js"></script>
+  <script src="speakerenglish.js"></script>
 
 </body>
 </html>
+
+
+
