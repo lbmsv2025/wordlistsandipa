@@ -1,78 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
+    /* Whole page background */
     body {
       font-family: 'Nunito', sans-serif;
-      background-color: #d8f3dc;
+      background-color: #F2F2F2; /* Pastel gray */
       margin: 0;
       padding: 20px;
     }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 2px;
-    }
+/* Set font size 18px for all table cells */
+table td, table button, table .word-button {
+    font-size: 18px;
+}
 
-    h2.subtitle {
-      text-align: center;
-      font-size: 18px;
-      font-weight: 400;
-      color: #333;
-      margin-top: 0;
-      margin-bottom: 18px;
-    }
+/* Keep table headers (titles) bigger */
+table th {
+    font-size: 20px;  /* You can adjust to your preferred size */
+    font-weight: 700;
+}
 
+    /* General table design */
     table {
-      width: 90%;
-      margin: 0 auto;
+      width: 80%;
+      margin: 20px auto;
       border-collapse: collapse;
       table-layout: fixed;
     }
 
     th, td {
-      border: 1px solid #9aa69a;
-      padding: 12px;
-      text-align: center;     /* default: center everything */
+      border: 1px solid #999;
+      padding: 10px;
+      text-align: center;
       vertical-align: middle;
       word-wrap: break-word;
     }
 
-    /* column widths (adjust percentages as needed, total should be <=100) */
-    th:nth-child(1), td:nth-child(1) { width: 18%; } /* WORD */
-    th:nth-child(2), td:nth-child(2) { width: 18%; } /* IPA (US) */
-    th:nth-child(3), td:nth-child(3) { width: 18%; } /* IPA (UK) */
-    th:nth-child(4) { width: 46%; text-align: center; } /* MEANING header centered */
-    td:nth-child(4) { width: 46%; text-align: left; padding-left: 14px; } /* MEANING cells left aligned */
-    
-    /* optional visual improvements */
-    thead th { background: #cfe9d1; font-weight: 700; }
-    tbody tr:nth-child(odd) { background: rgba(255,255,255,0.14); }
+    /* Meaning column alignment */
+    th:nth-child(4) { text-align: center; }
+    td:nth-child(4) { text-align: left; }
+
+    /* Button that fills word cell */
+    .word-cell { padding: 0; }
+    .word-button {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: none;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .word-button:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    /* 🎨 COLORS PER MAJOR */
+    .english-table th, .english-table td {
+      background-color: #FFE5B4; /* pastel yellow-orange */
+    }
+
+    .math-table th, .math-table td {
+      background-color: #E8DAFF; /* pastel purple */
+    }
+
+    .science-table th, .science-table td {
+      background-color: #D8F3DC; /* pastel green */
+    }
+
+/* Make sure all table content and buttons use Nunito */
+table, th, td, button, .word-button {
+    font-family: 'Nunito', sans-serif !important;
+}
+
   </style>
 </head>
-
-
 <body>
 
 <h1>Word List with IPA & Meanings</h1>
 <h2 class="subtitle">For Science Majors</h2>
-
-<table>
+<table class="science-table">
     <tr>
         <th>WORD</th>
         <th>IPA (US)</th>
         <th>IPA (UK)</th>
-        <th>MEANING </th>
+        <th>MEANING</th>
     </tr>
     <tr>
-         <td><button class="word-button" data-word="algae">🔊 algae</button></td>
+<td class="word-cell">
+         <button class="word-button" data-word="algae">🔊 algae</button></td>
         <td>/ˈæl.dʒiː/</td>
         <td>/ˈæl.ɡiː/</td>
-        <td>‣ very simple plants that grow in or near water and do not have ordinary leaves or roots</td>
+        <td class="meaning-cell">‣ very simple plants that grow in or near water and do not have ordinary leaves or roots</td>
     </tr>
     <tr>
          <td><button class="word-button" data-word="alveoli ">🔊 alveoli</button></td>
@@ -287,7 +314,7 @@ th:nth-child(4), td:nth-child(4) { width: 50%; text-align: left; } /* MEANING */
 
 <h1>Word List with IPA & Meanings</h1>
 <h2 class="subtitle">For English Majors</h2>
-
+<table class="english-table">
 <table>
     <tr>
         <th>WORD</th>
@@ -334,8 +361,8 @@ th:nth-child(4), td:nth-child(4) { width: 50%; text-align: left; } /* MEANING */
     </tr>
     <tr>
          <td><button class="word-button" data-word="rapport ">🔊 rapport </button></td>
-        <td> /prəˌnʌn.siˈeɪ.ʃən/</td>
-        <td>/prəˌnʌn.siˈeɪ.ʃən/</td>
+        <td>/ræpˈɔːr/</td>
+        <td>/ræpˈɔːr/</td>
         <td>‣ a close and harmonious relationship in which the people or groups concerned understand each other's feelings or ideas and communicate well
 </td>
     </tr>
@@ -589,7 +616,7 @@ th:nth-child(4), td:nth-child(4) { width: 50%; text-align: left; } /* MEANING */
 
 <h1>Word List with IPA & Meanings</h1>
 <h2 class="subtitle">For Math Majors</h2>
-
+<table class="math-table">
 <table>
     <tr>
         <th>WORD</th>
