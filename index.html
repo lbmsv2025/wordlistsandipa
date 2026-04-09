@@ -7,6 +7,121 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
+
+.sound-categories {
+  width: 80%;
+  margin: 30px auto;
+}
+
+.category-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff8e1;
+}
+
+.category-table th, .category-table td {
+  border: 1px solid #999;
+  padding: 10px;
+  text-align: center;
+}
+
+.category-table th {
+  background-color: #ffd54f;
+  font-size: 20px;
+}
+
+.category-title {
+  font-weight: bold;
+}
+
+/* Color coding */
+.voiceless {
+  background-color: #bbdefb; /* blue */
+  border: none;
+  margin: 3px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.voiced {
+  background-color: #ffcdd2; /* red */
+  border: none;
+  margin: 3px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.voiceless:hover {
+  background-color: #90caf9;
+}
+
+.voiced:hover {
+  background-color: #ef9a9a;
+}
+.voiceless-text {
+  color: #1565c0;
+  font-weight: bold;
+}
+
+.voiced-text {
+  color: #c62828;
+  font-weight: bold;
+}
+
+.voicing-section {
+  width: 80%;
+  margin: 30px auto;
+}
+
+.voicing-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #e3f2fd;
+}
+
+.voicing-table th, .voicing-table td {
+  border: 1px solid #999;
+  padding: 10px;
+  text-align: center;
+}
+
+.voicing-table th {
+  background-color: #90caf9;
+  font-size: 18px;
+}
+
+.type {
+  font-weight: bold;
+  color: #1565c0;
+}
+.phonemic-section {
+  width: 80%;
+  margin: 0 auto 30px auto;
+}
+
+.phonemic-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #e0f7fa;
+}
+
+.phonemic-table th, .phonemic-table td {
+  border: 1px solid #999;
+  padding: 10px;
+  text-align: center;
+}
+
+.phonemic-table th {
+  font-size: 20px;
+  background-color: #b2ebf2;
+}
+
+.highlight {
+  color: #d62828;
+  font-weight: bold;
+}
     body {
       font-family: 'Nunito', sans-serif;
       background-color: #f2f2f2; /* Pastel gray background */
@@ -91,353 +206,349 @@ th:nth-child(4), td:nth-child(4) { width: 35%; } /* Meaning */
 </head>
 <body>
 
-  <!-- ✅ SCIENCE TABLE -->
-  <h2>🔬 Vocabulary for Science Majors</h2>
-  <table class="science-table">
+<div class="phonemic-section">
+  <h3>🔊 Phonemic Chart (Key Sounds Practice)</h3>
+<p class="table-intro">
+  ▸ This chart presents key English sounds (phonemes), each with an example and pronunciation guide.<br>
+  ▸ <i>Phonemes are the smallest units of sound that distinguish meaning in a language.</i>
+</p>
+
+  <table class="phonemic-table">
     <tr>
-      <th>Word</th>
-      <th>UK IPA</th>
-      <th>US IPA</th>
-      <th>Meaning</th>
+      <th>Sound</th>
+      <th>Example</th>
+      <th>How to Pronounce</th>
     </tr>
+
+    <!-- VOWELS -->
     <tr>
-      <td class="word-cell">
-         <button class="word-button" data-word="algae">🔊 algae</button></td>
-        <td>/ˈæl.dʒiː/</td>
-        <td>/ˈæl.ɡiː/</td>
-        <td class="meaning-cell">‣ very simple plants that grow in or near water and do not have ordinary leaves or roots</td>
+   <td button onclick="speakSound('iː')" style="cursor:pointer;">/iː/</td>
+  <td onclick="speak('beet')" style="cursor:pointer;">
+  </td>
+      <td>Long "ee" sound. Smile slightly, stretch the sound.</td>
+
     </tr>
-    <tr>
-         <td><button class="word-button" data-word="alveoli ">🔊 alveoli</button></td>
-        <td>/ælˈviː.ə.laɪ/</td>
-        <td>/ˌæl.viˈəʊ.laɪ/</td>
-        <td>‣ small air sacs in the lungs</td>
+
+      <td>/ɪ/</td>
+      <td>b<span class="highlight">i</span>t</td>
+      <td>Short "i". Relax your mouth, keep it short.</td>
+
+   <td onclick="speakSound('ɪ')" style="cursor:pointer;">/ɪ/</td>
+  <td onclick="speak('bit')" style="cursor:pointer;">
+    b<span class="highlight">ee</span>t
+
     </tr>
+
     <tr>
-         <td><button class="word-button" data-word="aorta ">🔊 aorta</button></td>
-        <td>/eɪˈɔːr.t̬ə/</td>
-        <td>/eɪˈɔː.tə/</td>
-        <td>‣ the main artery of the body, supplying oxygenated blood to the circulatory system
-</td>
+      <td>/æ/</td>
+      <td>c<span class="highlight">a</span>t</td>
+      <td>Open your mouth wide. Flat "a" sound.</td>
     </tr>
+
     <tr>
-         <td><button class="word-button" data-word="bronchiole">🔊 bronchiole</button></td>
-        <td>/ˈbrɑːŋ.ki.oʊl/</td>
-        <td>/ˈbrɒŋ.ki.əʊl/</td>
-        <td>‣ is a tiny, tube-like air passage inside the lungs that branches off from the bronchi (the two main air tubes) and leads to the alveoli (tiny air sacs)</td>
+      <td>/ʌ/</td>
+      <td>c<span class="highlight">u</span>p</td>
+      <td>Relaxed central sound. Short and neutral.</td>
+    </tr>
+
     <tr>
-         <td><button class="word-button" data-word="carbohydrates">🔊 carbohydrates </button></td>
-        <td>/ˌkɑːr.boʊˈhaɪ.dreɪt/</td>
-        <td>/ˌkɑː.bəʊˈhaɪ.dreɪt/</td>
-        <td>‣ any of a large group of organic compounds that includes sugars, starch, and cellulose, containing hydrogen and oxygen in the same ratio as water (2:1) and used as structural materials and for energy storage within living tissues</td>
+      <td>/ɑː/</td>
+      <td>c<span class="highlight">ar</span></td>
+      <td>Open mouth wide, longer sound.</td>
+    </tr>
+
     <tr>
-         <td><button class="word-button" data-word="parasympathetic">🔊 parasympathetic</button></td>
-        <td> /ˌper.ə.sɪm.pəˈθet̬.ɪk/</td>
-        <td>/ˌpær.ə.sɪm.pəˈθet.ɪk/</td>
-        <td>‣ relating to the part of the automatic nervous system that counterbalances the action of the sympathetic nerves. It consists of nerves arising from the brain and the lower end of the spinal cord and supplying the internal organs, blood vessels, and glands</td>
+      <td>/ɔː/</td>
+      <td>d<span class="highlight">oor</span></td>
+      <td>Round lips slightly. Long “o” sound.</td>
+    </tr>
+
     <tr>
-         <td><button class="word-button" data-word="diaphragm ">🔊 diaphragm </button></td>
-        <td>  /ˈdaɪ.ə.fræm/</td>
-        <td>/ˈdaɪ.ə.fræm/</td>
-        <td>‣ refers to a dome-shaped muscle located below the lungs that separates the chest from the abdomen</td>
+      <td>/uː/</td>
+      <td>f<span class="highlight">oo</span>d</td>
+      <td>Round lips tightly. Long “oo”.</td>
+    </tr>
+
     <tr>
-         <td><button class="word-button" data-word="fungi ">🔊 fungi</button></td>
-        <td>/ˈfʌŋ.ɡaɪ/</td>
-        <td>/ˈfʌŋ.ɡaɪ/</td>
-        <td>‣ any of a group of spore-producing organisms feeding on organic matter, or the fruiting body of such an organism</td>
+      <td>/ʊ/</td>
+      <td>g<span class="highlight">oo</span>d</td>
+      <td>Short “oo”. Lips slightly rounded.</td>
+    </tr>
+
+    <!-- DIPHTHONGS -->
     <tr>
-         <td><button class="word-button" data-word="lymphatic ">🔊 lymphatic  </button></td>
-        <td> /lɪmˈfæt̬.ɪk/</td>
-        <td>/lɪmˈfæt.ɪk/</td>
-        <td>‣ relating to lymph or its secretion</td>
+      <td>/eɪ/</td>
+      <td>p<span class="highlight">ay</span></td>
+      <td>Glide from “e” to “ɪ”.</td>
+    </tr>
+
     <tr>
-         <td><button class="word-button" data-word="mitochondrion  ">🔊 mitochondrion  </button></td>
-        <td> /ˌmaɪ.t̬oʊˈkɑːn.dri.ən/</td>
-        <td>/ˌmaɪ.təˈkɒn.dri.ən/</td>
-        <td>‣ an organelle found in large numbers in most cells, in which the biochemical processes of respiration and energy production occur. It has a double membrane, the inner layer being folded inward to form layers (cristae)</td>
+      <td>/aɪ/</td>
+      <td>t<span class="highlight">i</span>me</td>
+      <td>Open to close movement: “a” → “ɪ”.</td>
+    </tr>
+
     <tr>
-         <td><button class="word-button" data-word="mitosis  ">🔊 mitosis  </button></td>
-        <td>/maɪˈtoʊ.sɪs/</td>
-        <td>/maɪˈtəʊ.sɪs/</td>
-        <td>‣ a type of cell division that results in two daughter cells each having the same number and kind of chromosomes as the parent nucleus, typical of ordinary tissue growth</td>
+      <td>/ɔɪ/</td>
+      <td>b<span class="highlight">oy</span></td>
+      <td>Round lips, then relax quickly.</td>
+    </tr>
+
     <tr>
-         <td><button class="word-button" data-word="prokaryote  ">🔊 prokaryote  </button></td>
-        <td> /proʊˈker.i.oʊt/ </td>
-        <td>/prəʊˈkær.i.əʊt/</td>
-        <td>‣ a microscopic single-celled organism that has neither a distinct nucleus with a membrane nor other specialized organelles. Prokaryotes include the bacteria and cyanobacteria</td>
+      <td>/aʊ/</td>
+      <td>n<span class="highlight">ow</span></td>
+      <td>Wide open → rounded lips.</td>
+    </tr>
+
+    <!-- CONSONANTS -->
     <tr>
-         <td><button class="word-button" data-word="sebaceous gland  ">🔊 sebaceous gland  </button></td>
-        <td> /sɪˈbeɪ.ʃəs ˌɡlænd/</td>
-        <td>/sɪˈbeɪ.ʃəs ˌɡlænd/</td>
-        <td>‣ a small gland in the skin which secretes a lubricating oily matter (sebum) into the hair follicles to lubricate the skin and hair</td>
+      <td>/θ/</td>
+      <td><span class="highlight">th</span>ink</td>
+      <td>Put tongue between teeth. Blow air.</td>
+    </tr>
+
     <tr>
-         <td><button class="word-button" data-word="heterogeneous ">🔊 heterogeneous </button></td>
-        <td>/ˌhet̬.ə.roʊˈdʒiː.ni.əs/</td>
-        <td>/ˌhet.ər.əˈdʒiː.ni.əs/</td>
-        <td>‣ diverse in character or content</td>
+      <td>/ð/</td>
+      <td><span class="highlight">th</span>is</td>
+      <td>Same position as /θ/, but use voice.</td>
+    </tr>
+
     <tr>
-         <td><button class="word-button" data-word="adhesion  ">🔊 adhesion  </button></td>
-        <td>/ədˈhiː.ʒən/</td>
-        <td>/ədˈhiː.ʒən/</td>
-        <td>‣ the action or process of adhering to a surface or object</td>
+      <td>/ʃ/</td>
+      <td><span class="highlight">sh</span>e</td>
+      <td>Push lips forward. Quiet air sound.</td>
+    </tr>
+
     <tr>
-         <td><button class="word-button" data-word="amoeba ">🔊 amoeba </button></td>
-        <td>/əˈmiː.bə/</td>
-        <td> /əˈmiː.bə/</td>
-        <td>‣ a single-celled animal that catches food and moves about by extending fingerlike projections of protoplasm</td>
+      <td>/ʒ/</td>
+      <td>mea<span class="highlight">s</span>ure</td>
+      <td>Like /ʃ/ but with voice.</td>
+    </tr>
+
     <tr>
-         <td><button class="word-button" data-word="amoebae  ">🔊 amoebae  </button></td>
-        <td> /əˈmiː.biː/</td>
-        <td>/əˈmiː.biː/</td>
-        <td>‣ plural form of amoeba; a single-celled animal that catches food and moves about by extending fingerlike projections of protoplasm. Amoebas are either free-living in damp environments or parasitic</td>
+      <td>/tʃ/</td>
+      <td><span class="highlight">ch</span>air</td>
+      <td>Stop + release sound.</td>
+    </tr>
+
     <tr>
-         <td><button class="word-button" data-word="archeology  ">🔊 archeology  </button></td>
-        <td>/ˌɑːr.kiˈɑː.lə.dʒi/</td>
-        <td>/ˌɑː.kiˈɒl.ə.dʒi/</td>
-        <td>‣ the study of human history and prehistory through the excavation of sites and the analysis of artifacts and other physical remains</td>
-    <tr>
-         <td><button class="word-button" data-word="theta  ">🔊 theta  </button></td>
-        <td>/ˈθeɪ.t̬ə/</td>
-        <td>/ˈθiː.tə/</td>
-        <td>‣ the eighth letter of the Greek alphabet, often used in mathematics to represent an unknown angle</td>
-    <tr>
-         <td><button class="word-button" data-word="precipitation  ">🔊 precipitation  </button></td>
-        <td> /priːˌsɪp.əˈteɪ.ʃən/</td>
-        <td>/prɪˌsɪp.ɪˈteɪ.ʃən/</td>
-        <td>‣ the action or process of precipitating a substance from a solution</td>
-    <tr>
-         <td><button class="word-button" data-word="zoology  ">🔊 zoology  </button></td>
-        <td>/zoʊˈɑː.lə.dʒi/</td>
-        <td>/zuːˈɒl.ə.dʒi/ /zəʊˈɒl.ə.dʒi/</td>
-        <td>‣ the scientific study of the behavior, structure, physiology, classification, and distribution of animals</td>
-    <tr>
-         <td><button class="word-button" data-word="whirled ">🔊 whirled </button></td>
-        <td> /wɝːld/</td>
-        <td>/wɜːld/</td>
-        <td>‣ move or cause to move rapidly around and around</td>
-    <tr>
-         <td><button class="word-button" data-word="temperature  ">🔊 temperature  </button></td>
-        <td> /ˈtem.pɚ.ə.tʃɚ/</td>
-        <td>/ˈtem.prə.tʃər/</td>
-        <td>‣ the degree or intensity of heat present in a substance or object, especially as expressed according to a comparative scale and shown by a thermometer or perceived by touch</td>
-    <tr>
-         <td><button class="word-button" data-word="nuisance  ">🔊 nuisance  </button></td>
-        <td>/ˈnuː.səns/ </td>
-        <td>/ˈnjuː.səns/</td>
-        <td>‣ a person, thing, or circumstance causing inconvenience or annoyance</td>
-    <tr>
-         <td><button class="word-button" data-word="longitudinal  ">🔊 longitudinal  </button></td>
-        <td>/ˌlɑːn.dʒəˈtuː.dɪ.nəl/</td>
-        <td>/ˌlɒŋ.ɡɪˈtʃuː.dɪ.nəl/ uk/ˌlɒn.dʒɪˈtʃuː.dɪ.nəl/</td>
-        <td>‣ running lengthwise rather than across; often relating to studies that follow a subject over an extended period of time</td>
-    <tr>
-         <td><button class="word-button" data-word="chirping  ">🔊 chirping  </button></td>
-        <td>/tʃɝːp/ </td>
-        <td>/tʃɜːp/</td>
-        <td>‣ typically of a small bird or an insect) utter a short, sharp, high-pitched sound</td>
-    <tr>
-         <td><button class="word-button" data-word="cochlea  ">🔊 cochlea  </button></td>
-        <td> /ˈkoʊ.kli.ə/ /ˈkɑːk.li.ə/</td>
-        <td>/ˈkɒk.li.ə/</td>
-        <td>‣ the spiral cavity of the inner ear containing the organ of Corti, which produces nerve impulses in response to sound vibrations</td>
-    <tr>
-         <td><button class="word-button" data-word="eclipse  ">🔊 eclipse</button></td>
-        <td> /ɪˈklɪps/ </td>
-        <td>/ɪˈklɪps/</td>
-        <td>‣ an obscuring of the light from one celestial body by the passage of another between it and the observer or between it and its source of illumination
-</td>
-    <tr>
-         <td><button class="word-button" data-word="gaseous  ">🔊 gaseous</button></td>
-        <td>/ˈɡæs.i.əs/</td>
-        <td>/ˈɡæs.i.əs/</td>
-        <td>‣ relating to or having the characteristics of a gas</td>
-    <tr>
-         <td><button class="word-button" data-word="barometer  ">   🔊 barometer</button></td>
-        <td> /bəˈrɑː.mə.t̬ɚ/</td>
-        <td>/bəˈrɒm.ɪ.tər/</td>
-        <td>‣ an instrument measuring atmospheric pressure, used especially in forecasting the weather and determining altitude</td>
+      <td>/dʒ/</td>
+      <td><span class="highlight">j</span>ob</td>
+      <td>Voiced version of /tʃ/.</td>
+    </tr>
 
   </table>
+</div>
 
-  <div class="divider"></div>
+<div class="sound-categories">
+  <h3>🔤 English Sound Classification Guide</h3>
+<p class="table-intro">
+▸ This guide categorizes English sounds into vowels and consonants based on how they are produced.<br>
+▸ <i>Vowels are produced with free airflow, while consonants involve some obstruction.</i>
+</p>
 
-  <!-- ✅ MATH TABLE -->
-  <h2>📐 Vocabulary for Math Majors</h2>
-  <table class="math-table">
+  <table class="category-table">
     <tr>
-      <th>Word</th>
-      <th>UK IPA</th>
-      <th>US IPA</th>
-      <th>Meaning</th>
+      <th>Category</th>
+      <th>Sounds</th>
+      <th>Meaning / How It Works</th>
     </tr>
+
+  <!-- Short Vowels -->
     <tr>
-              <td><button class="word-button" data-word="fifth">🔊 fifth</button></td>
-        <td>/fɪfθ/</td>
-        <td>/fɪfθ/</td>
-        <td>‣ the ordinal number following fourth; one of five equal parts</td>
+      <td class="category-title">Short Vowels</td>
+      <td>
+        <button onclick="speakSound('ship')" class="voiceless">/ɪ/</button>
+        <button onclick="speakSound('mend')" class="voiceless">/e/</button>
+        <button onclick="speakSound('apple')" class="voiceless">/æ/</button>
+ <button onclick="speakSound('mud')" class="voiceless">/ʌ/</button>
+ <button onclick="speakSound('good')" class="voiceless">/ʊ/</button>
+ <button onclick="speakSound('America')" class="voiceless">/ə/</button>
+      <td>Short, quick vowel sounds. The mouth stays in one position and the sound is not stretched. <br>
+👉 Example: /ɪ/ in “bit”
     </tr>
+
+ <!-- Long Vowels -->
     <tr>
-         <td><button class="word-button" data-word="hundred ">🔊 hundred</button></td>
-        <td>/ˈhʌn.drəd/</td>
-        <td>/ˈhʌn.drəd/</td>
-        <td>‣ the number equivalent to ten times ten; 100</td>
+      <td class="category-title">Long Vowels</td>
+      <td>
+        <button onclick="speakSound('sheep')" class="voiceless">/iː/</button>
+        <button onclick="speakSound('far')" class="voiceless">/ɑː/</button>
+        <button onclick="speakSound('door')" class="voiceless">/ɔː/</button>
+ <button onclick="speakSound('food')" class="voiceless">/uː/</button>
+ <button onclick="speakSound('firm')" class="voiceless">/ɜː/</button>
+       <td>Vowel sounds that are held longer than short vowels. <br>
+👉 Example: /iː/ in “see”
     </tr>
+
+<!-- Diphthongs -->
     <tr>
-         <td><button class="word-button" data-word="incongruent ">🔊 incongruent</button></td>
-        <td>/ˌɪn.kəŋˈɡru.ənt/ /ɪnˈkɑːŋ.ɡru.ənt/</td>
-        <td>/ɪnˈkɒŋ.ɡru.ənt/</td>
-        <td>‣ not matching or not in agreement; in geometry, figures that do not have the same size and shape
-</td>
+      <td class="category-title">Diphthongs</td>
+      <td>
+        <button onclick="speakSound('way')" class="voiceless">/eɪ/</button>
+        <button onclick="speakSound('time')" class="voiceless">/aɪ/</button>
+        <button onclick="speakSound('boy')" class="voiceless">/ɔɪ/</button>
+ <button onclick="speakSound('house')" class="voiceless">/aʊ/</button>
+ <button onclick="speakSound('low')" class="voiceless">/oʊ/ (US) /əʊ/ (UK)</button>
+ <button onclick="speakSound('ear')" class="voiceless">/ɪr/ (US) /ɪə/ (UK)</button>
+ <button onclick="speakSound('bear')" class="voiceless">/er/ (US) /eə/ (UK)</button>
+ <button onclick="speakSound('pure')" class="voiceless">/ʊr/ (US) ʊə/ (UK)</button>
+       <td> A combination of two vowel sounds in one syllable. Your mouth moves (glides) from one position to another.<br>
+        👉 Example: /aɪ/ in <b>“time”
     </tr>
+
+
+<!-- Voiceless Consonants -->
     <tr>
-         <td><button class="word-button" data-word="elimination">🔊 elimination</button></td>
-        <td>/iˌlɪm.əˈneɪ.ʃən/</td>
-        <td>/iˌlɪm.ɪˈneɪ.ʃən/</td>
-        <td>‣ the process of removing or getting rid of something, often used in algebra to solve systems of equations</td>
+      <td class="category-title">Voiceless Consonants</td>
+      <td>
+        <button onclick="speakSound('pose')" class="voiceless">/p/</button>
+        <button onclick="speakSound('tall')" class="voiceless">/t/</button>
+        <button onclick="speakSound('car')" class="voiceless">/k/</button>
+ <button onclick="speakSound('frozen')" class="voiceless">/f/</button>
+ <button onclick="speakSound('thanks')" class="voiceless">/θ/</button>
+ <button onclick="speakSound('sober')" class="voiceless">/s/</button>
+ <button onclick="speakSound('shore')" class="voiceless">/ʃ/</button>
+ <button onclick="speakSound('honk')" class="voiceless">/h/</button>
+ <button onclick="speakSound('cheese')" class="voiceless">/tʃ/</button>
+       <td>	Produced WITHOUT vibration in the vocal cords. <br>
+👉 Put your hand on your throat—no vibration. <br>
+👉 Example: /p/ in “pen”</b>
+    </tr>
+
+<!-- Voiced Consonants -->
     <tr>
-         <td><button class="word-button" data-word="integral">🔊 integral </button></td>
-        <td>/ˈɪn.t̬ə.ɡrəl/</td>
-        <td>/ˈɪn.tɪ.ɡrəl/</td>
-        <td>‣ necessary to make a whole complete; in mathematics, the area under a curve</td>
-    <tr>
-         <td><button class="word-button" data-word="interpret">🔊 interpret</button></td>
-        <td> /ɪnˈtɝːprɪt/</td>
-        <td>/ɪnˈtɜː.prɪt/</td>
-        <td>‣ to explain the meaning of information, words, or actions
-</td>
-    <tr>
-         <td><button class="word-button" data-word="measurement  ">🔊 measurement  </button></td>
-        <td>/ˈmeʒ.ɚ.mənt/</td>
-        <td>/ˈmeʒ.ə.mənt/</td>
-        <td>‣ the process or result of determining the size, amount, or degree of an object or quantity</td>
-    <tr>
-         <td><button class="word-button" data-word="twelfth ">🔊 twelfth</button></td>
-        <td> /twelfθ/ </td>
-        <td>/twelfθ/</td>
-        <td>‣ the ordinal number following eleventh; one of twelve equal parts</td>
-    <tr>
-         <td><button class="word-button" data-word="quote ">🔊 quote  </button></td>
-        <td> /kwoʊt/</td>
-        <td>/kwəʊt/</td>
-        <td>‣ to repeat or copy out words from a text or speech, typically with an acknowledgment of the original author or speaker</td>
-    <tr>
-         <td><button class="word-button" data-word="Cartesian">🔊 Cartesian  </button></td>
-        <td>/kɑːrˈti.ʒən/</td>
-        <td>/kɑːˈti.zi.ən/</td>
-        <td>‣ relating to the coordinate system devised by René Descartes, which uses numbered axes to uniquely determine every point in a plane or space</td>
-    <tr>
-         <td><button class="word-button" data-word="cosecant">🔊 cosecant  </button></td>
-        <td>/ˌkoʊˈsiː.kənt/</td>
-        <td>/ˌkəʊˈsiː.kənt/</td>
-        <td>‣ in trigonometry, the reciprocal of the sine of an angle</td>
-    <tr>
-         <td><button class="word-button" data-word="Euclidean ">🔊 Euclidean </button></td>
-        <td> /juˈklɪd.i.ən/</td>
-        <td>/juˈklɪd.i.ən/</td>
-        <td>‣ relating to the system of geometry based on the axioms of the Greek mathematician Euclid</td>
-    <tr>
-         <td><button class="word-button" data-word="Fibonacci">🔊 Fibonacci </button></td>
-        <td> /fɪb.əˈnɑː.tʃi /</td>
-        <td>/fɪb.əˈnɑː.tʃi/</td>
-        <td>‣ relating to the sequence of numbers where each number is the sum of the two preceding ones, starting with 0 and 1</td>
-    <tr>
-         <td><button class="word-button" data-word="pint ">🔊 pint </button></td>
-        <td> /paɪnt/</td>
-        <td>/paɪnt/</td>
-        <td>‣ a unit of liquid or dry capacity, equal to one-eighth of a gallon (approx. 0.57 liters in the UK or 0.47 liters in the US)</td>
-    <tr>
-         <td><button class="word-button" data-word="phi  ">🔊 phi  </button></td>
-        <td>/faɪ/</td>
-        <td>/faɪ/</td>
-        <td>‣ the symbol used to represent the golden ratio (approximately 1.618), an irrational number found in geometry and nature</td>
-    <tr>
-         <td><button class="word-button" data-word="polyhedron ">🔊 polyhedron </button></td>
-        <td>/ˌpɑː.liˈhiː.drɑːn/</td>
-        <td>/ˌpɒl.iˈhiː.drən/</td>
-        <td>‣ a three-dimensional solid figure whose surfaces are all flat polygons (faces)</td>
-    <tr>
-         <td><button class="word-button" data-word="Pythagorean theorem">🔊 Pythagorean theorem  </button></td>
-        <td> /pɪˌθæɡ.əˈriː.ən ˈθiː.rəm/</td>
-        <td>/paɪˌθæɡ.ə.riː.ən ˈθɪə.rəm/</td>
-        <td>‣ a fundamental relation in Euclidean geometry among the three sides of a right triangle: the square of the hypotenuse (c) is equal to the sum of the squares of the other two sides (a^2 + b^2 = c^2)
-</td>
-    <tr>
-         <td><button class="word-button" data-word="quotient  ">🔊 quotient  </button></td>
-        <td> /ˈkwoʊ.ʃənt/</td>
-        <td>/ˈkwəʊ.ʃənt/</td>
-        <td>‣ the result obtained by dividing one number by another</td>
-    <tr>
-         <td><button class="word-button" data-word="secant  ">🔊 secant  </button></td>
-        <td> /ˈsiː.kənt/</td>
-        <td>/ˈsiː.kənt/</td>
-        <td>‣ in trigonometry, the reciprocal of the cosine of an angle (abbreviated as \sec); also, a line that intersects a curve at two points</td>
-    <tr>
-         <td><button class="word-button" data-word="scalar  ">🔊 scalar </button></td>
-        <td>/ˈskeɪ.lɚ/</td>
-        <td>/ˈskeɪ.lər/</td>
-        <td>‣ a quantity that has magnitude but not direction</td>
-    <tr>
-         <td><button class="word-button" data-word="tableau  ">🔊 tableau  </button></td>
-        <td>/ˈtæb.loʊ/</td>
-        <td>/ˈtæb.ləʊ/</td>
-        <td>‣ a concise, organized display or arrangement of data, often used in linear programming and matrix operations</td>
-    <tr>
-         <td><button class="word-button" data-word="theta ">🔊 theta </button></td>
-        <td> /ˈθeɪ.t̬ə/ </td>
-        <td>/ˈθiː.tə/</td>
-        <td>‣ the eighth letter of the Greek alphabet, often used in mathematics to represent an unknown angle</td>
-    <tr>
-         <td><button class="word-button" data-word="trigonometry  ">🔊 trigonometry  </button></td>
-        <td>/ˌtrɪɡ.əˈnɑː.mə.tri/</td>
-        <td>/ˌtrɪɡ.əˈnɒm.ə.tri/</td>
-        <td>‣ the branch of mathematics dealing with the relations between the sides and angles of triangles and with the relevant functions of angles</td>
-    <tr>
-         <td><button class="word-button" data-word="variability  ">🔊 variability  </button></td>
-        <td> /ˌver.i.əˈbɪl.ə.t̬i/</td>
-        <td> /ˌver.i.əˈbɪl.ə.t̬i/</td>
-        <td>‣ the extent to which data points or values in a set differ from each other; a lack of uniformity</td>
-    <tr>
-         <td><button class="word-button" data-word="variable  ">🔊 variable  </button></td>
-        <td>/ˈver.i.ə.bəl/</td>
-        <td>/ˈveə.ri.ə.bəl/</td>
-        <td>‣ a quantity or factor that can change or be changed; a symbol (like x or y) representing an unknown or changing value</td>
-    <tr>
-         <td><button class="word-button" data-word="quantitative  ">🔊 quantitative  </button></td>
-        <td>/ˈkwɑːn.t̬ə.teɪ.t̬ɪv/</td>
-        <td>/ˈkwɒn.tɪ.tə.tɪv/</td>
-        <td>‣ relating to or measurable by amount, number, or quantity</td>
-    <tr>
-         <td><button class="word-button" data-word="coefficient  ">🔊 coefficient  </button></td>
-        <td>/ˌkoʊ.ɪˈfɪʃ.ənt/</td>
-        <td>/ˌkəʊ.ɪˈfɪʃ.ənt/</td>
-        <td>‣ a numerical or constant multiplier of a variable or a term in a polynomial</td>
-    <tr>
-         <td><button class="word-button" data-word="tangential  ">🔊 tangential</button></td>
-        <td>/tænˈdʒen.ʃəl/</td>
-        <td>/tænˈdʒen.ʃəl/</td>
-        <td>‣ relating to or along a tangent (a line that touches a curve at only one point); often meaning only superficially relevant
-</td>
-    <tr>
-         <td><button class="word-button" data-word="longitudinal   ">🔊 longitudinal </button></td>
-        <td>/ˌlɑːn.dʒəˈtuː.dɪ.nəl/</td>
-        <td>/ˌlɒŋ.ɡɪˈtʃuː.dɪ.nəl/ /ˌlɒn.dʒɪˈtʃuː.dɪ.nəl/</td>
-        <td>‣ running lengthwise rather than across; often relating to studies that follow a subject over an extended period of time</td>
-    <tr>
-         <td><button class="word-button" data-word="tangency  ">🔊 tangency</button></td>
-        <td>/ˈtæn.dʒən.si/ </td>
-        <td>/ˈtæn.dʒən.si/</td>
-        <td>‣ the condition or quality of being tangent or touching at a single point or along a line</td>
+      <td class="category-title">Voiced Consonants</td>
+      <td>
+        <button onclick="speakSound('boycott')" class="voiceless">/b/</button>
+        <button onclick="speakSound('donkey')" class="voiceless">/d/</button>
+        <button onclick="speakSound('government')" class="voiceless">/g/</button>
+ <button onclick="speakSound('vital')" class="voiceless">/v/</button>
+ <button onclick="speakSound('these')" class="voiceless">/ð/</button>
+ <button onclick="speakSound('zoologist')" class="voiceless">/z/</button>
+ <button onclick="speakSound('massage')" class="voiceless">/ʒ/</button>
+ <button onclick="speakSound('journey')" class="voiceless">/dʒ/</button>
+ <button onclick="speakSound('member')" class="voiceless">/m/</button>
+ <button onclick="speakSound('nasal')" class="voiceless">/n/</button>
+ <button onclick="speakSound('kangaroo')" class="voiceless">/ŋ/</button>
+ <button onclick="speakSound('lemonade')" class="voiceless">/l/</button>
+ <button onclick="speakSound('raspberry')" class="voiceless">/r/</button>
+ <button onclick="speakSound('yoyo')" class="voiceless">/j/</button>
+ <button onclick="speakSound('woke')" class="voiceless">/w/</button>
+       <td>	Produced WITHOUT vibration in the vocal cords. <br>
+👉 Put your hand on your throat—no vibration. <br>
+👉 Example: /p/ in “pen”</b>
+    </tr>
+
   </table>
+</div>
 
-  <div class="divider"></div>
+<div class="voicing-section">
+  <h3>🗣️ Types of Voicing in Articulatory Phonetics</h3>
+<p class="table-intro">
+▸ This chart explains voiced and voiceless sounds based on vocal cord vibration.<br>
+▸ <i>Vowels are produced with free airflow, while consonants involve some obstruction.</i>
+</p>
 
-  <!-- ✅ ENGLISH TABLE -->
+<div class="voicing-section">
+  <h3>🗣️ Types of Voicing in Articulatory Phonetics (Click to Hear)</h3>
+
+  <table class="voicing-table">
+    <tr>
+      <th>Sound Type</th>
+      <th>Voiceless 🔵</th>
+      <th>Voiced 🔴</th>
+      <th>Definition</th>
+    </tr>
+
+    <!-- PLOSIVES -->
+    <tr>
+      <td class="type">Plosives</td>
+      <td>
+        <button onclick="speakSound('p')" class="voiceless">/p/</button>
+        <button onclick="speakSound('t')" class="voiceless">/t/</button>
+        <button onclick="speakSound('k')" class="voiceless">/k/</button>
+      </td>
+      <td>
+        <button onclick="speakSound('b')" class="voiced">/b/</button>
+        <button onclick="speakSound('d')" class="voiced">/d/</button>
+        <button onclick="speakSound('g')" class="voiced">/g/</button>
+      </td>
+      <td>Air is blocked then released suddenly (stop sound).</td>
+    </tr>
+
+    <!-- FRICATIVES -->
+    <tr>
+      <td class="type">Fricatives</td>
+      <td>
+        <button onclick="speakSound('f')" class="voiceless">/f/</button>
+        <button onclick="speakSound('θ')" class="voiceless">/θ/</button>
+        <button onclick="speakSound('s')" class="voiceless">/s/</button>
+        <button onclick="speakSound('ʃ')" class="voiceless">/ʃ/</button>
+        <button onclick="speakSound('h')" class="voiceless">/h/</button>
+      </td>
+      <td>
+        <button onclick="speakSound('v')" class="voiced">/v/</button>
+        <button onclick="speakSound('ð')" class="voiced">/ð/</button>
+        <button onclick="speakSound('z')" class="voiced">/z/</button>
+        <button onclick="speakSound('ʒ')" class="voiced">/ʒ/</button>
+      </td>
+      <td>Air passes through a narrow gap → friction sound.</td>
+    </tr>
+
+    <!-- AFFRICATES -->
+    <tr>
+      <td class="type">Affricates</td>
+      <td>
+        <button onclick="speakSound('tʃ')" class="voiceless">/tʃ/</button>
+      </td>
+      <td>
+        <button onclick="speakSound('dʒ')" class="voiced">/dʒ/</button>
+      </td>
+      <td>Stop + friction combined.</td>
+    </tr>
+
+    <!-- NASALS -->
+    <tr>
+      <td class="type">Nasals</td>
+      <td>—</td>
+      <td>
+        <button onclick="speakSound('m')" class="voiced">/m/</button>
+        <button onclick="speakSound('n')" class="voiced">/n/</button>
+        <button onclick="speakSound('ŋ')" class="voiced">/ŋ/</button>
+      </td>
+      <td>Air flows through the nose.</td>
+    </tr>
+
+    <!-- APPROXIMANTS -->
+    <tr>
+      <td class="type">Approximants</td>
+      <td>—</td>
+      <td>
+        <button onclick="speakSound('l')" class="voiced">/l/</button>
+        <button onclick="speakSound('r')" class="voiced">/r/</button>
+        <button onclick="speakSound('j')" class="voiced">/j/</button>
+        <button onclick="speakSound('w')" class="voiced">/w/</button>
+      </td>
+      <td>Very little obstruction; smooth sounds.</td>
+    </tr>
+
+  </table>
+</div>
+ <!-- ✅ ENGLISH TABLE -->
   <h2>📖 Vocabulary for English Majors</h2>
   <table class="english-table">
+  <tr>
+    <td colspan="4" class="table-intro-cell">
+      ▸ This list contains commonly mispronounced words used in science discussions.<br>
+      ▸ <i>These terms are frequently used in scientific contexts and may present pronunciation challenges.</i>
+    </td>
+  </tr>
+
     <tr>
-      <th>Word</th>
-      <th>UK IPA</th>
-      <th>US IPA</th>
+      <th>Word (🔊 US)</th>
+      <th>American Pronunciation</th>
+      <th>British Pronunciation</th>
       <th>Meaning</th>
     </tr>
     <tr>
@@ -678,5 +789,375 @@ th:nth-child(4), td:nth-child(4) { width: 35%; } /* Meaning */
 </body>
 </html>
 
+  <!-- ✅ SCIENCE TABLE -->
+  <h2>🔬 Vocabulary for Science Majors</h2>
+  <table class="science-table">
+ <tr>
+    <td colspan="4" class="table-intro-cell">
+      ▸ This list contains commonly mispronounced words used in science discussions.<br>
+      ▸ <i>These terms are frequently used in scientific contexts and may present pronunciation challenges.</i>
+    </td>
+  </tr>
+    <tr>
+      <th>Word (🔊 US) </th>
+      <th>American Pronunciation</th>
+      <th>British Pronunciation</th>
+      <th>Meaning</th>
+    </tr>
+    <tr>
+      <td class="word-cell">
+         <button class="word-button" data-word="algae">🔊 algae</button></td>
+        <td>/ˈæl.dʒiː/</td>
+        <td>/ˈæl.ɡiː/</td>
+        <td class="meaning-cell">‣ very simple plants that grow in or near water and do not have ordinary leaves or roots</td>
+    </tr>
+    <tr>
+         <td><button class="word-button" data-word="alveoli ">🔊 alveoli</button></td>
+        <td>/ælˈviː.ə.laɪ/</td>
+        <td>/ˌæl.viˈəʊ.laɪ/</td>
+        <td>‣ small air sacs in the lungs</td>
+    </tr>
+    <tr>
+         <td><button class="word-button" data-word="aorta ">🔊 aorta</button></td>
+        <td>/eɪˈɔːr.t̬ə/</td>
+        <td>/eɪˈɔː.tə/</td>
+        <td>‣ the main artery of the body, supplying oxygenated blood to the circulatory system
+</td>
+    </tr>
+    <tr>
+         <td><button class="word-button" data-word="bronchiole">🔊 bronchiole</button></td>
+        <td>/ˈbrɑːŋ.ki.oʊl/</td>
+        <td>/ˈbrɒŋ.ki.əʊl/</td>
+        <td>‣ is a tiny, tube-like air passage inside the lungs that branches off from the bronchi (the two main air tubes) and leads to the alveoli (tiny air sacs)</td>
+    <tr>
+         <td><button class="word-button" data-word="carbohydrates">🔊 carbohydrates </button></td>
+        <td>/ˌkɑːr.boʊˈhaɪ.dreɪt/</td>
+        <td>/ˌkɑː.bəʊˈhaɪ.dreɪt/</td>
+        <td>‣ any of a large group of organic compounds that includes sugars, starch, and cellulose, containing hydrogen and oxygen in the same ratio as water (2:1) and used as structural materials and for energy storage within living tissues</td>
+    <tr>
+         <td><button class="word-button" data-word="parasympathetic">🔊 parasympathetic</button></td>
+        <td> /ˌper.ə.sɪm.pəˈθet̬.ɪk/</td>
+        <td>/ˌpær.ə.sɪm.pəˈθet.ɪk/</td>
+        <td>‣ relating to the part of the automatic nervous system that counterbalances the action of the sympathetic nerves. It consists of nerves arising from the brain and the lower end of the spinal cord and supplying the internal organs, blood vessels, and glands</td>
+    <tr>
+         <td><button class="word-button" data-word="diaphragm ">🔊 diaphragm </button></td>
+        <td>  /ˈdaɪ.ə.fræm/</td>
+        <td>/ˈdaɪ.ə.fræm/</td>
+        <td>‣ refers to a dome-shaped muscle located below the lungs that separates the chest from the abdomen</td>
+    <tr>
+         <td><button class="word-button" data-word="fungi ">🔊 fungi</button></td>
+        <td>/ˈfʌŋ.ɡaɪ/</td>
+        <td>/ˈfʌŋ.ɡaɪ/</td>
+        <td>‣ any of a group of spore-producing organisms feeding on organic matter, or the fruiting body of such an organism</td>
+    <tr>
+         <td><button class="word-button" data-word="lymphatic ">🔊 lymphatic  </button></td>
+        <td> /lɪmˈfæt̬.ɪk/</td>
+        <td>/lɪmˈfæt.ɪk/</td>
+        <td>‣ relating to lymph or its secretion</td>
+    <tr>
+         <td><button class="word-button" data-word="mitochondrion  ">🔊 mitochondrion  </button></td>
+        <td> /ˌmaɪ.t̬oʊˈkɑːn.dri.ən/</td>
+        <td>/ˌmaɪ.təˈkɒn.dri.ən/</td>
+        <td>‣ an organelle found in large numbers in most cells, in which the biochemical processes of respiration and energy production occur. It has a double membrane, the inner layer being folded inward to form layers (cristae)</td>
+    <tr>
+         <td><button class="word-button" data-word="mitosis  ">🔊 mitosis  </button></td>
+        <td>/maɪˈtoʊ.sɪs/</td>
+        <td>/maɪˈtəʊ.sɪs/</td>
+        <td>‣ a type of cell division that results in two daughter cells each having the same number and kind of chromosomes as the parent nucleus, typical of ordinary tissue growth</td>
+    <tr>
+         <td><button class="word-button" data-word="prokaryote  ">🔊 prokaryote  </button></td>
+        <td> /proʊˈker.i.oʊt/ </td>
+        <td>/prəʊˈkær.i.əʊt/</td>
+        <td>‣ a microscopic single-celled organism that has neither a distinct nucleus with a membrane nor other specialized organelles. Prokaryotes include the bacteria and cyanobacteria</td>
+    <tr>
+         <td><button class="word-button" data-word="sebaceous gland  ">🔊 sebaceous gland  </button></td>
+        <td> /sɪˈbeɪ.ʃəs ˌɡlænd/</td>
+        <td>/sɪˈbeɪ.ʃəs ˌɡlænd/</td>
+        <td>‣ a small gland in the skin which secretes a lubricating oily matter (sebum) into the hair follicles to lubricate the skin and hair</td>
+    <tr>
+         <td><button class="word-button" data-word="heterogeneous ">🔊 heterogeneous </button></td>
+        <td>/ˌhet̬.ə.roʊˈdʒiː.ni.əs/</td>
+        <td>/ˌhet.ər.əˈdʒiː.ni.əs/</td>
+        <td>‣ diverse in character or content</td>
+    <tr>
+         <td><button class="word-button" data-word="adhesion  ">🔊 adhesion  </button></td>
+        <td>/ədˈhiː.ʒən/</td>
+        <td>/ədˈhiː.ʒən/</td>
+        <td>‣ the action or process of adhering to a surface or object</td>
+    <tr>
+         <td><button class="word-button" data-word="amoeba ">🔊 amoeba </button></td>
+        <td>/əˈmiː.bə/</td>
+        <td> /əˈmiː.bə/</td>
+        <td>‣ a single-celled animal that catches food and moves about by extending fingerlike projections of protoplasm</td>
+    <tr>
+         <td><button class="word-button" data-word="amoebae  ">🔊 amoebae  </button></td>
+        <td> /əˈmiː.biː/</td>
+        <td>/əˈmiː.biː/</td>
+        <td>‣ plural form of amoeba; a single-celled animal that catches food and moves about by extending fingerlike projections of protoplasm. Amoebas are either free-living in damp environments or parasitic</td>
+    <tr>
+         <td><button class="word-button" data-word="archeology  ">🔊 archeology  </button></td>
+        <td>/ˌɑːr.kiˈɑː.lə.dʒi/</td>
+        <td>/ˌɑː.kiˈɒl.ə.dʒi/</td>
+        <td>‣ the study of human history and prehistory through the excavation of sites and the analysis of artifacts and other physical remains</td>
+    <tr>
+         <td><button class="word-button" data-word="theta  ">🔊 theta  </button></td>
+        <td>/ˈθeɪ.t̬ə/</td>
+        <td>/ˈθiː.tə/</td>
+        <td>‣ the eighth letter of the Greek alphabet, often used in mathematics to represent an unknown angle</td>
+    <tr>
+         <td><button class="word-button" data-word="precipitation  ">🔊 precipitation  </button></td>
+        <td> /priːˌsɪp.əˈteɪ.ʃən/</td>
+        <td>/prɪˌsɪp.ɪˈteɪ.ʃən/</td>
+        <td>‣ the action or process of precipitating a substance from a solution</td>
+    <tr>
+         <td><button class="word-button" data-word="zoology  ">🔊 zoology  </button></td>
+        <td>/zoʊˈɑː.lə.dʒi/</td>
+        <td>/zuːˈɒl.ə.dʒi/ /zəʊˈɒl.ə.dʒi/</td>
+        <td>‣ the scientific study of the behavior, structure, physiology, classification, and distribution of animals</td>
+    <tr>
+         <td><button class="word-button" data-word="whirled ">🔊 whirled </button></td>
+        <td> /wɝːld/</td>
+        <td>/wɜːld/</td>
+        <td>‣ move or cause to move rapidly around and around</td>
+    <tr>
+         <td><button class="word-button" data-word="temperature  ">🔊 temperature  </button></td>
+        <td> /ˈtem.pɚ.ə.tʃɚ/</td>
+        <td>/ˈtem.prə.tʃər/</td>
+        <td>‣ the degree or intensity of heat present in a substance or object, especially as expressed according to a comparative scale and shown by a thermometer or perceived by touch</td>
+    <tr>
+         <td><button class="word-button" data-word="nuisance  ">🔊 nuisance  </button></td>
+        <td>/ˈnuː.səns/ </td>
+        <td>/ˈnjuː.səns/</td>
+        <td>‣ a person, thing, or circumstance causing inconvenience or annoyance</td>
+    <tr>
+         <td><button class="word-button" data-word="longitudinal  ">🔊 longitudinal  </button></td>
+        <td>/ˌlɑːn.dʒəˈtuː.dɪ.nəl/</td>
+        <td>/ˌlɒŋ.ɡɪˈtʃuː.dɪ.nəl/ uk/ˌlɒn.dʒɪˈtʃuː.dɪ.nəl/</td>
+        <td>‣ running lengthwise rather than across; often relating to studies that follow a subject over an extended period of time</td>
+    <tr>
+         <td><button class="word-button" data-word="chirping  ">🔊 chirping  </button></td>
+        <td>/tʃɝːp/ </td>
+        <td>/tʃɜːp/</td>
+        <td>‣ typically of a small bird or an insect) utter a short, sharp, high-pitched sound</td>
+    <tr>
+         <td><button class="word-button" data-word="cochlea  ">🔊 cochlea  </button></td>
+        <td> /ˈkoʊ.kli.ə/ /ˈkɑːk.li.ə/</td>
+        <td>/ˈkɒk.li.ə/</td>
+        <td>‣ the spiral cavity of the inner ear containing the organ of Corti, which produces nerve impulses in response to sound vibrations</td>
+    <tr>
+         <td><button class="word-button" data-word="eclipse  ">🔊 eclipse</button></td>
+        <td> /ɪˈklɪps/ </td>
+        <td>/ɪˈklɪps/</td>
+        <td>‣ an obscuring of the light from one celestial body by the passage of another between it and the observer or between it and its source of illumination
+</td>
+    <tr>
+         <td><button class="word-button" data-word="gaseous  ">🔊 gaseous</button></td>
+        <td>/ˈɡæs.i.əs/</td>
+        <td>/ˈɡæs.i.əs/</td>
+        <td>‣ relating to or having the characteristics of a gas</td>
+    <tr>
+         <td><button class="word-button" data-word="barometer  ">   🔊 barometer</button></td>
+        <td> /bəˈrɑː.mə.t̬ɚ/</td>
+        <td>/bəˈrɒm.ɪ.tər/</td>
+        <td>‣ an instrument measuring atmospheric pressure, used especially in forecasting the weather and determining altitude</td>
 
+  </table>
 
+  <div class="divider"></div>
+
+  <!-- ✅ MATH TABLE -->
+  <h2>📐 Vocabulary for Math Majors</h2>
+  <table class="math-table">
+   <tr>
+    <td colspan="4" class="table-intro-cell">
+      ▸ This list contains commonly mispronounced words used in science discussions.<br>
+      ▸ <i>These terms are frequently used in scientific contexts and may present pronunciation challenges.</i>
+    </td>
+  </tr>
+
+      <th>Word (🔊 US)</th>
+      <th>American Pronunciation</th>
+      <th>British Pronunciation</th>
+      <th>Meaning</th>
+    </tr>
+    <tr>
+              <td><button class="word-button" data-word="fifth">🔊 fifth</button></td>
+        <td>/fɪfθ/</td>
+        <td>/fɪfθ/</td>
+        <td>‣ the ordinal number following fourth; one of five equal parts</td>
+    </tr>
+    <tr>
+         <td><button class="word-button" data-word="hundred ">🔊 hundred</button></td>
+        <td>/ˈhʌn.drəd/</td>
+        <td>/ˈhʌn.drəd/</td>
+        <td>‣ the number equivalent to ten times ten; 100</td>
+    </tr>
+    <tr>
+         <td><button class="word-button" data-word="incongruent ">🔊 incongruent</button></td>
+        <td>/ˌɪn.kəŋˈɡru.ənt/ /ɪnˈkɑːŋ.ɡru.ənt/</td>
+        <td>/ɪnˈkɒŋ.ɡru.ənt/</td>
+        <td>‣ not matching or not in agreement; in geometry, figures that do not have the same size and shape
+</td>
+    </tr>
+    <tr>
+         <td><button class="word-button" data-word="elimination">🔊 elimination</button></td>
+        <td>/iˌlɪm.əˈneɪ.ʃən/</td>
+        <td>/iˌlɪm.ɪˈneɪ.ʃən/</td>
+        <td>‣ the process of removing or getting rid of something, often used in algebra to solve systems of equations</td>
+    <tr>
+         <td><button class="word-button" data-word="integral">🔊 integral </button></td>
+        <td>/ˈɪn.t̬ə.ɡrəl/</td>
+        <td>/ˈɪn.tɪ.ɡrəl/</td>
+        <td>‣ necessary to make a whole complete; in mathematics, the area under a curve</td>
+    <tr>
+         <td><button class="word-button" data-word="interpret">🔊 interpret</button></td>
+        <td> /ɪnˈtɝːprɪt/</td>
+        <td>/ɪnˈtɜː.prɪt/</td>
+        <td>‣ to explain the meaning of information, words, or actions
+</td>
+    <tr>
+         <td><button class="word-button" data-word="measurement  ">🔊 measurement  </button></td>
+        <td>/ˈmeʒ.ɚ.mənt/</td>
+        <td>/ˈmeʒ.ə.mənt/</td>
+        <td>‣ the process or result of determining the size, amount, or degree of an object or quantity</td>
+    <tr>
+         <td><button class="word-button" data-word="twelfth ">🔊 twelfth</button></td>
+        <td> /twelfθ/ </td>
+        <td>/twelfθ/</td>
+        <td>‣ the ordinal number following eleventh; one of twelve equal parts</td>
+    <tr>
+         <td><button class="word-button" data-word="quote ">🔊 quote  </button></td>
+        <td> /kwoʊt/</td>
+        <td>/kwəʊt/</td>
+        <td>‣ to repeat or copy out words from a text or speech, typically with an acknowledgment of the original author or speaker</td>
+    <tr>
+         <td><button class="word-button" data-word="Cartesian">🔊 Cartesian  </button></td>
+        <td>/kɑːrˈti.ʒən/</td>
+        <td>/kɑːˈti.zi.ən/</td>
+        <td>‣ relating to the coordinate system devised by René Descartes, which uses numbered axes to uniquely determine every point in a plane or space</td>
+    <tr>
+         <td><button class="word-button" data-word="cosecant">🔊 cosecant  </button></td>
+        <td>/ˌkoʊˈsiː.kənt/</td>
+        <td>/ˌkəʊˈsiː.kənt/</td>
+        <td>‣ in trigonometry, the reciprocal of the sine of an angle</td>
+    <tr>
+         <td><button class="word-button" data-word="Euclidean ">🔊 Euclidean </button></td>
+        <td> /juˈklɪd.i.ən/</td>
+        <td>/juˈklɪd.i.ən/</td>
+        <td>‣ relating to the system of geometry based on the axioms of the Greek mathematician Euclid</td>
+    <tr>
+         <td><button class="word-button" data-word="Fibonacci">🔊 Fibonacci </button></td>
+        <td> /fɪb.əˈnɑː.tʃi /</td>
+        <td>/fɪb.əˈnɑː.tʃi/</td>
+        <td>‣ relating to the sequence of numbers where each number is the sum of the two preceding ones, starting with 0 and 1</td>
+    <tr>
+         <td><button class="word-button" data-word="pint ">🔊 pint </button></td>
+        <td> /paɪnt/</td>
+        <td>/paɪnt/</td>
+        <td>‣ a unit of liquid or dry capacity, equal to one-eighth of a gallon (approx. 0.57 liters in the UK or 0.47 liters in the US)</td>
+    <tr>
+         <td><button class="word-button" data-word="phi  ">🔊 phi  </button></td>
+        <td>/faɪ/</td>
+        <td>/faɪ/</td>
+        <td>‣ the symbol used to represent the golden ratio (approximately 1.618), an irrational number found in geometry and nature</td>
+    <tr>
+         <td><button class="word-button" data-word="polyhedron ">🔊 polyhedron </button></td>
+        <td>/ˌpɑː.liˈhiː.drɑːn/</td>
+        <td>/ˌpɒl.iˈhiː.drən/</td>
+        <td>‣ a three-dimensional solid figure whose surfaces are all flat polygons (faces)</td>
+    <tr>
+         <td><button class="word-button" data-word="Pythagorean theorem">🔊 Pythagorean theorem  </button></td>
+        <td> /pɪˌθæɡ.əˈriː.ən ˈθiː.rəm/</td>
+        <td>/paɪˌθæɡ.ə.riː.ən ˈθɪə.rəm/</td>
+        <td>‣ a fundamental relation in Euclidean geometry among the three sides of a right triangle: the square of the hypotenuse (c) is equal to the sum of the squares of the other two sides (a^2 + b^2 = c^2)
+</td>
+    <tr>
+         <td><button class="word-button" data-word="quotient  ">🔊 quotient  </button></td>
+        <td> /ˈkwoʊ.ʃənt/</td>
+        <td>/ˈkwəʊ.ʃənt/</td>
+        <td>‣ the result obtained by dividing one number by another</td>
+    <tr>
+         <td><button class="word-button" data-word="secant  ">🔊 secant  </button></td>
+        <td> /ˈsiː.kənt/</td>
+        <td>/ˈsiː.kənt/</td>
+        <td>‣ in trigonometry, the reciprocal of the cosine of an angle (abbreviated as \sec); also, a line that intersects a curve at two points</td>
+    <tr>
+         <td><button class="word-button" data-word="scalar  ">🔊 scalar </button></td>
+        <td>/ˈskeɪ.lɚ/</td>
+        <td>/ˈskeɪ.lər/</td>
+        <td>‣ a quantity that has magnitude but not direction</td>
+    <tr>
+         <td><button class="word-button" data-word="tableau  ">🔊 tableau  </button></td>
+        <td>/ˈtæb.loʊ/</td>
+        <td>/ˈtæb.ləʊ/</td>
+        <td>‣ a concise, organized display or arrangement of data, often used in linear programming and matrix operations</td>
+    <tr>
+         <td><button class="word-button" data-word="theta ">🔊 theta </button></td>
+        <td> /ˈθeɪ.t̬ə/ </td>
+        <td>/ˈθiː.tə/</td>
+        <td>‣ the eighth letter of the Greek alphabet, often used in mathematics to represent an unknown angle</td>
+    <tr>
+         <td><button class="word-button" data-word="trigonometry  ">🔊 trigonometry  </button></td>
+        <td>/ˌtrɪɡ.əˈnɑː.mə.tri/</td>
+        <td>/ˌtrɪɡ.əˈnɒm.ə.tri/</td>
+        <td>‣ the branch of mathematics dealing with the relations between the sides and angles of triangles and with the relevant functions of angles</td>
+    <tr>
+         <td><button class="word-button" data-word="variability  ">🔊 variability  </button></td>
+        <td> /ˌver.i.əˈbɪl.ə.t̬i/</td>
+        <td> /ˌver.i.əˈbɪl.ə.t̬i/</td>
+        <td>‣ the extent to which data points or values in a set differ from each other; a lack of uniformity</td>
+    <tr>
+         <td><button class="word-button" data-word="variable  ">🔊 variable  </button></td>
+        <td>/ˈver.i.ə.bəl/</td>
+        <td>/ˈveə.ri.ə.bəl/</td>
+        <td>‣ a quantity or factor that can change or be changed; a symbol (like x or y) representing an unknown or changing value</td>
+    <tr>
+         <td><button class="word-button" data-word="quantitative  ">🔊 quantitative  </button></td>
+        <td>/ˈkwɑːn.t̬ə.teɪ.t̬ɪv/</td>
+        <td>/ˈkwɒn.tɪ.tə.tɪv/</td>
+        <td>‣ relating to or measurable by amount, number, or quantity</td>
+    <tr>
+         <td><button class="word-button" data-word="coefficient  ">🔊 coefficient  </button></td>
+        <td>/ˌkoʊ.ɪˈfɪʃ.ənt/</td>
+        <td>/ˌkəʊ.ɪˈfɪʃ.ənt/</td>
+        <td>‣ a numerical or constant multiplier of a variable or a term in a polynomial</td>
+    <tr>
+         <td><button class="word-button" data-word="tangential  ">🔊 tangential</button></td>
+        <td>/tænˈdʒen.ʃəl/</td>
+        <td>/tænˈdʒen.ʃəl/</td>
+        <td>‣ relating to or along a tangent (a line that touches a curve at only one point); often meaning only superficially relevant
+</td>
+    <tr>
+         <td><button class="word-button" data-word="longitudinal   ">🔊 longitudinal </button></td>
+        <td>/ˌlɑːn.dʒəˈtuː.dɪ.nəl/</td>
+        <td>/ˌlɒŋ.ɡɪˈtʃuː.dɪ.nəl/ /ˌlɒn.dʒɪˈtʃuː.dɪ.nəl/</td>
+        <td>‣ running lengthwise rather than across; often relating to studies that follow a subject over an extended period of time</td>
+    <tr>
+         <td><button class="word-button" data-word="tangency  ">🔊 tangency</button></td>
+        <td>/ˈtæn.dʒən.si/ </td>
+        <td>/ˈtæn.dʒən.si/</td>
+        <td>‣ the condition or quality of being tangent or touching at a single point or along a line</td>
+  </table>
+
+ <div class="references-section" style="width: 80%; margin: 40px auto; padding-top: 20px; border-top: 1px solid #ccc;">
+  <h4 style="color: #333;">References & Resources</h4>
+  <ul style="list-style-type: none; padding: 0; font-size: 15px; color: #666; line-height: 1.8;">
+    <li>📖 <b>Cambridge Dictionary:</b> English Pronunciation & Phonetic Transcriptions (UK & US).</li>
+    <li>🔊 <b>British Council & IPA:</b> Interactive Phonemic Charts and Articulatory Phonetics standards.</li>
+    <li>🤖 <b>AI Integration:</b> Technical structural assistance and code optimization provided by ChatGPT.</li>
+
+  </ul>
+
+<footer style="width: 80%; margin: 50px auto 20px auto; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; font-size: 14px; color: #777;">
+  <p>
+    <b> Design:</b> Originally developed by Jake P. Serdeña, 
+    enhanced and digitized by Melody P. Serdeña with technical assistance from ChatGPT and help from fellow student researchers: Jayrell Lopez, Anne Nicole Barrameda, Arjay Montefalcon, and Louissa Vecinal.
+  </p>
+  <p style="font-style: italic; margin-top: 5px;">
+    &copy; 2024-2025 lbmsvPLSPstudentresearchers. Thesis Output
+  </p>
+</footer>
+
+</div>
+
+  <div class="divider"></div>
