@@ -1,7 +1,31 @@
+/* HERO BANNER */
 .hero-banner {
   width: 100%;
-  height: 220px;
-  background: url('assets/images/banner.png') center/cover no-repeat;
-  border-radius: 0 0 16px 16px;
-  overflow: hidden;
+  height: 220px; /* 👈 smaller banner */
+  background: url('assets/images/group.JPG') top center / cover no-repeat; /* 👈 FIXED */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* OVERLAY */
+.hero-overlay {
+  background: rgba(255, 255, 255, 0.6); /* lighter, matches your site */
+  padding: 15px 25px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* TITLE */
+.hero-overlay h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #2d4f8f;
+}
+
+/* SUBTEXT */
+.hero-overlay p {
+  font-size: 1rem;
+  color: #444;
 }
