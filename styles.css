@@ -1,7 +1,7 @@
 .hero-banner {
   width: 100%;
   height: 220px;
-  background: url('banner.png') center/cover no-repeat;
+  background: url('assets/images/banner.png') center/cover no-repeat;
   border-radius: 0 0 16px 16px;
   overflow: hidden;
 }
