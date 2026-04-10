@@ -1,50 +1,31 @@
 /* HERO BANNER */
 .hero-banner {
+  width: 100%;
+  height: 220px; /* 👈 smaller banner */
+  background: url('assets/images/group.JPG') top center / cover no-repeat; /* 👈 FIXED */
   position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-}
-
-/* IMAGE (fixes head cropping) */
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top; /* 👈 shows heads */
-}
-
-/* OVERLAY TEXT */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
 
-  /* style to match your website */
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.2),
-    rgba(0,0,0,0.4)
-  );
-
-  color: #1f2d5a;
+/* OVERLAY */
+.hero-overlay {
+  background: rgba(255, 255, 255, 0.6); /* lighter, matches your site */
+  padding: 15px 25px;
+  border-radius: 12px;
   text-align: center;
-  padding: 20px;
 }
 
 /* TITLE */
 .hero-overlay h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #1f2d5a;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #2d4f8f;
 }
 
 /* SUBTEXT */
 .hero-overlay p {
-  font-size: 1.2rem;
-  color: #2c3e50;
+  font-size: 1rem;
+  color: #444;
 }
