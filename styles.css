@@ -1,31 +1,68 @@
-/* HERO BANNER */
 .hero-banner {
   width: 100%;
-  height: 220px; /* 👈 smaller banner */
-  background: url('assets/images/group.JPG') top center / cover no-repeat; /* 👈 FIXED */
+  min-height: 350px;
+  background: url('assets/images/group.JPG') center/cover no-repeat;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
-/* OVERLAY */
+/* Dark overlay using pseudo-element (cleaner) */
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
 .hero-overlay {
-  background: rgba(255, 255, 255, 0.6); /* lighter, matches your site */
-  padding: 15px 25px;
-  border-radius: 12px;
+  position: relative; /* keeps content above overlay */
+  padding: 30px 40px;
+  border-radius: 15px;
   text-align: center;
+  color: white;
+  max-width: 800px;
 }
 
-/* TITLE */
+/* Responsive text */
 .hero-overlay h1 {
-  font-size: 1.8rem;
-  margin-bottom: 5px;
-  color: #2d4f8f;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 10px;
 }
 
-/* SUBTEXT */
 .hero-overlay p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+.hero-overlay {
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-banner::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.3)
+  );
+}
+.hero-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #ff9800;
+  color: white;
+  cursor: pointer;
   font-size: 1rem;
-  color: #444;
 }
