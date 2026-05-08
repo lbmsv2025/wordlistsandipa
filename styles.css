@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8fbff;
+  color: #1f2937;
+}
+
 .hero-banner {
   width: 100%;
   min-height: 350px;
