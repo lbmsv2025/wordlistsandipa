@@ -67,107 +67,108 @@
   font-size: 1rem;
 }
 /* ============================= */
-/* INTRODUCTION SECTION */
+/* IPA INTRODUCTION SECTION */
 /* ============================= */
 
-.intro-section {
-  padding: 80px 20px;
+.ipa-intro-section {
+  padding: 90px 20px;
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.35), transparent 35%),
     linear-gradient(135deg, #2563eb 0%, #1e40af 45%, #0f172a 100%);
   color: #ffffff;
 }
 
-.intro-wrapper {
+.ipa-intro-wrapper {
   max-width: 1150px;
   margin: 0 auto;
 }
 
-.intro-header {
+.ipa-intro-header {
   text-align: center;
   max-width: 850px;
-  margin: 0 auto 40px;
+  margin: 0 auto 42px;
 }
 
-.intro-badge {
+.ipa-intro-badge {
   display: inline-block;
-  padding: 8px 18px;
-  margin-bottom: 16px;
+  padding: 9px 20px;
+  margin-bottom: 18px;
   background: rgba(255, 255, 255, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
   color: #ffffff;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.4px;
 }
 
-.intro-header h2 {
-  font-size: 2.4rem;
+.ipa-intro-header h2 {
+  font-size: 2.5rem;
   line-height: 1.2;
-  margin-bottom: 16px;
+  margin: 0 0 16px;
   color: #ffffff;
 }
 
-.intro-header p {
-  font-size: 1.08rem;
+.ipa-intro-header p {
+  font-size: 1.1rem;
   line-height: 1.7;
   color: #dbeafe;
+  margin: 0;
 }
 
-.intro-content {
+.ipa-intro-content {
   display: grid;
   grid-template-columns: 1.7fr 1fr;
   gap: 24px;
   margin-bottom: 28px;
 }
 
-.intro-main-card,
-.intro-side-card,
-.intro-card,
-.features-strip {
-  background: rgba(255, 255, 255, 0.96);
+.ipa-intro-main,
+.ipa-intro-focus,
+.ipa-benefit-card,
+.ipa-feature-strip {
+  background: rgba(255, 255, 255, 0.97);
   color: #1f2937;
   border-radius: 24px;
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.22);
 }
 
-.intro-main-card {
+.ipa-intro-main {
   padding: 34px;
   border-left: 6px solid #60a5fa;
 }
 
-.intro-main-card p {
+.ipa-intro-main p {
   font-size: 1.02rem;
   line-height: 1.85;
-  margin-bottom: 18px;
+  margin: 0 0 18px;
 }
 
-.intro-main-card p:last-child {
+.ipa-intro-main p:last-child {
   margin-bottom: 0;
 }
 
-.intro-side-card {
+.ipa-intro-focus {
   padding: 28px;
 }
 
-.intro-side-card h3 {
+.ipa-intro-focus h3 {
   color: #1e3a8a;
   font-size: 1.35rem;
-  margin-bottom: 18px;
+  margin: 0 0 18px;
 }
 
-.focus-item {
+.ipa-focus-item {
   padding: 15px 0;
   border-bottom: 1px solid #e5e7eb;
 }
 
-.focus-item:last-child {
+.ipa-focus-item:last-child {
   border-bottom: none;
 }
 
-.focus-item span {
-  display: inline-block;
+.ipa-focus-item strong {
+  display: block;
   margin-bottom: 5px;
   color: #2563eb;
   font-weight: 800;
@@ -176,33 +177,33 @@
   letter-spacing: 0.5px;
 }
 
-.focus-item p {
-  margin: 0;
+.ipa-focus-item span {
+  display: block;
   color: #4b5563;
   line-height: 1.5;
 }
 
-.intro-grid {
+.ipa-benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
   margin-top: 26px;
 }
 
-.intro-card {
+.ipa-benefit-card {
   padding: 28px;
   transition: 0.3s ease;
   border-top: 5px solid #60a5fa;
 }
 
-.intro-card:hover {
+.ipa-benefit-card:hover {
   transform: translateY(-7px);
   box-shadow: 0 24px 55px rgba(15, 23, 42, 0.28);
 }
 
-.intro-icon {
-  width: 54px;
-  height: 54px;
+.ipa-benefit-icon {
+  width: 56px;
+  height: 56px;
   margin-bottom: 18px;
   border-radius: 16px;
   background: #eff6ff;
@@ -213,20 +214,20 @@
   font-size: 1.7rem;
 }
 
-.intro-card h3 {
+.ipa-benefit-card h3 {
   color: #1e3a8a;
   font-size: 1.12rem;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
   line-height: 1.35;
 }
 
-.intro-card p {
+.ipa-benefit-card p {
   color: #4b5563;
   line-height: 1.65;
   margin: 0;
 }
 
-.features-strip {
+.ipa-feature-strip {
   margin-top: 28px;
   padding: 24px;
   display: grid;
@@ -234,21 +235,21 @@
   gap: 18px;
 }
 
-.features-strip div {
+.ipa-feature-strip div {
   padding: 18px;
   background: #f8fbff;
   border-radius: 16px;
   border: 1px solid #dbeafe;
 }
 
-.features-strip strong {
+.ipa-feature-strip strong {
   display: block;
   color: #1e3a8a;
   font-size: 1rem;
   margin-bottom: 7px;
 }
 
-.features-strip span {
+.ipa-feature-strip span {
   color: #4b5563;
   line-height: 1.5;
   font-size: 0.95rem;
@@ -256,40 +257,40 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-  .intro-content,
-  .intro-grid,
-  .features-strip {
+  .ipa-intro-content,
+  .ipa-benefits-grid,
+  .ipa-feature-strip {
     grid-template-columns: 1fr;
   }
 
-  .intro-header h2 {
+  .ipa-intro-header h2 {
     font-size: 2rem;
   }
 
-  .intro-section {
-    padding: 60px 16px;
+  .ipa-intro-section {
+    padding: 65px 16px;
   }
 }
 
 @media (max-width: 600px) {
-  .intro-main-card,
-  .intro-side-card,
-  .intro-card,
-  .features-strip {
+  .ipa-intro-main,
+  .ipa-intro-focus,
+  .ipa-benefit-card,
+  .ipa-feature-strip {
     border-radius: 18px;
   }
 
-  .intro-main-card,
-  .intro-side-card,
-  .intro-card {
+  .ipa-intro-main,
+  .ipa-intro-focus,
+  .ipa-benefit-card {
     padding: 24px;
   }
 
-  .intro-header h2 {
+  .ipa-intro-header h2 {
     font-size: 1.7rem;
   }
 
-  .intro-header p {
+  .ipa-intro-header p {
     font-size: 1rem;
   }
 }
