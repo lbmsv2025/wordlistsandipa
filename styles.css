@@ -66,3 +66,42 @@
   cursor: pointer;
   font-size: 1rem;
 }
+.intro-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+.intro-container {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #222;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.intro-container p {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.intro-container h3 {
+  margin-top: 35px;
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+.intro-container ul {
+  margin-left: 25px;
+  margin-bottom: 25px;
+}
+
+.intro-container li {
+  margin-bottom: 10px;
+}
+
+.intro-container strong {
+  font-weight: 700;
+  color: #111;
+}
