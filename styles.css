@@ -392,49 +392,6 @@ body {
 /* RESPONSIVE */
 /* ============================= */
 
-@media (max-width: 900px) {
-  .navbar {
-    flex-wrap: wrap;
-  }
-
-  .menu-button {
-    display: flex;
-  }
-
-  .nav-links {
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    padding-top: 14px;
-  }
-
-  .nav-links a {
-    background: rgba(255, 255, 255, 0.12);
-    padding: 12px 14px;
-    border-radius: 12px;
-  }
-
-  .menu-toggle:checked ~ .nav-links {
-    display: flex;
-  }
-
-  .ipa-intro-content,
-  .ipa-benefits-grid,
-  .ipa-feature-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .ipa-intro-header h2 {
-    font-size: 2rem;
-  }
-
-  .ipa-intro-section {
-    padding: 65px 16px;
-  }
-}
-
 @media (max-width: 600px) {
   .brand-text strong {
     font-size: 0.9rem;
@@ -470,6 +427,12 @@ body {
   .ipa-intro-header p {
     font-size: 1rem;
   }
+}
+
+/* ============================= */
+/* MINIMAL PAIRS EXPLANATION */
+/* ============================= */
+
 .minimal-pairs-explanation {
   background: #ffffff;
   border: 1px solid #e6eefc;
