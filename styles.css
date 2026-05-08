@@ -470,4 +470,28 @@ body {
   .ipa-intro-header p {
     font-size: 1rem;
   }
+.minimal-pairs-explanation {
+  background: #ffffff;
+  border: 1px solid #e6eefc;
+  border-left: 6px solid #2563eb;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 10px 24px rgba(31, 60, 136, 0.08);
+}
+
+.minimal-pairs-explanation h3 {
+  margin-top: 0;
+  color: #1f3c88;
+  font-size: 1.4rem;
+}
+
+.minimal-pairs-explanation p {
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.minimal-pairs-explanation strong {
+  color: #1d4ed8;
 }
